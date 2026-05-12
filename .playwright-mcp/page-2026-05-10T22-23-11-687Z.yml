@@ -1,0 +1,157 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e4]:
+    - generic [ref=e6]:
+      - link "Rachel Chen Product Designer + Engineer" [ref=e8]:
+        - /url: /
+        - heading "Rachel Chen" [level=4] [ref=e9]
+        - heading "Product Designer + Engineer" [level=4] [ref=e10]
+      - generic [ref=e11]:
+        - generic [ref=e12]:
+          - link "Work" [ref=e13]:
+            - /url: /
+            - heading "Work" [level=4] [ref=e14]
+          - link "Fun" [ref=e15]:
+            - /url: /fun
+            - heading "Fun" [level=4] [ref=e16]
+          - link "About" [ref=e17]:
+            - /url: /about
+            - heading "About" [level=4] [ref=e18]
+          - link "Resume" [ref=e19]:
+            - /url: /Rachel_Chen_Resume.pdf
+            - heading "Resume" [level=4] [ref=e20]
+        - button "Open AI chat" [ref=e22]:
+          - img [ref=e23]
+          - generic [ref=e25]: RacheLLM
+    - main [ref=e26]:
+      - main [ref=e28]:
+        - generic [ref=e29]:
+          - generic [ref=e30]:
+            - heading "I'm Rachel, a product designer who engineers." [level=1] [ref=e32]
+            - generic [ref=e34]:
+              - generic [ref=e35]:
+                - heading "2026" [level=4] [ref=e36]
+                - generic [ref=e37]:
+                  - link "Independent Practice" [ref=e39]:
+                    - /url: https://notion.so
+                  - paragraph [ref=e40]: Design Engineer
+              - generic [ref=e41]:
+                - heading "2025" [level=4] [ref=e42]
+                - generic [ref=e43]:
+                  - link "Bloomberg" [ref=e45]:
+                    - /url: https://bloomberg.com
+                  - paragraph [ref=e46]: Software Engineering Intern
+              - generic [ref=e47]:
+                - heading "2025" [level=4] [ref=e48]
+                - generic [ref=e49]:
+                  - link "1Password" [ref=e51]:
+                    - /url: https://1password.com
+                  - paragraph [ref=e52]: Product Design Intern
+              - generic [ref=e53]:
+                - heading "2024" [level=4] [ref=e54]
+                - generic [ref=e55]:
+                  - link "Royal Bank of Canada" [ref=e57]:
+                    - /url: https://rbc.com
+                  - paragraph [ref=e58]: Software Engineering Intern
+              - generic [ref=e59]:
+                - heading "2023" [level=4] [ref=e60]
+                - generic [ref=e61]:
+                  - link "Onova" [ref=e63]:
+                    - /url: https://onova.io
+                  - paragraph [ref=e64]: Product Design + Engineering Intern
+          - generic [ref=e65]:
+            - generic [ref=e66]:
+              - link "Project thumbnail for OpenAI x Hardware The future of AI & hardware OpenAI x Hardware • Concept 2025" [ref=e67]:
+                - /url: /projects/openai
+                - generic [ref=e68]:
+                  - img "Project thumbnail for OpenAI x Hardware" [ref=e70]:
+                    - generic "Loading video preview" [ref=e71]
+                    - generic "Video preview for OpenAI x Hardware" [ref=e72]
+                  - generic [ref=e74]:
+                    - heading "The future of AI & hardware" [level=3] [ref=e75]
+                    - heading "OpenAI x Hardware • Concept 2025" [level=4] [ref=e76]
+              - link "Project thumbnail for Amazon Alexa+ Novel consumer AI experiences Amazon Alexa+ • Contract 2025" [ref=e77]:
+                - /url: /projects/alexa
+                - generic [ref=e78]:
+                  - img "Project thumbnail for Amazon Alexa+" [ref=e80]:
+                    - generic "Loading video preview" [ref=e81]
+                    - generic "Video preview for Amazon Alexa+" [ref=e82]
+                  - generic [ref=e84]:
+                    - heading "Novel consumer AI experiences" [level=3] [ref=e85]
+                    - heading "Amazon Alexa+ • Contract 2025" [level=4] [ref=e86]
+              - link "Project thumbnail for Figma Mobile-first for Figma Figma • Concept 2025" [ref=e87]:
+                - /url: /projects/figma
+                - generic [ref=e88]:
+                  - img "Project thumbnail for Figma" [ref=e90]:
+                    - generic "Loading video preview" [ref=e91]
+                    - generic "Video preview for Figma" [ref=e92]
+                  - generic [ref=e94]:
+                    - heading "Mobile-first for Figma" [level=3] [ref=e95]
+                    - heading "Figma • Concept 2025" [level=4] [ref=e96]
+              - link "Project thumbnail for Royal Bank of Canada Patent-pending AI Royal Bank of Canada • Handed off 2024" [ref=e97]:
+                - /url: /projects/rbc
+                - generic [ref=e98]:
+                  - img "Project thumbnail for Royal Bank of Canada" [ref=e100]:
+                    - generic "Loading image preview" [ref=e101]
+                    - img "Preview image for Royal Bank of Canada" [ref=e103]
+                  - generic [ref=e105]:
+                    - heading "Patent-pending AI" [level=3] [ref=e106]
+                    - heading "Royal Bank of Canada • Handed off 2024" [level=4] [ref=e107]
+            - generic [ref=e108]:
+              - link "Project thumbnail for PokerGPT The world's first AI poker coach PokerGPT • Shipped 2023" [ref=e109]:
+                - /url: /projects/pokergpt
+                - generic [ref=e110]:
+                  - img "Project thumbnail for PokerGPT" [ref=e112]:
+                    - generic "Loading video preview" [ref=e113]
+                    - generic "Video preview for PokerGPT" [ref=e114]
+                  - generic [ref=e116]:
+                    - heading "The world's first AI poker coach" [level=3] [ref=e117]
+                    - heading "PokerGPT • Shipped 2023" [level=4] [ref=e118]
+              - link "Project thumbnail for 1Password Bringing autofill to macOS 1Password • Shipped 2025" [ref=e119]:
+                - /url: /projects/1password
+                - generic [ref=e120]:
+                  - img "Project thumbnail for 1Password" [ref=e122]:
+                    - generic "Loading video preview" [ref=e123]
+                    - generic "Video preview for 1Password" [ref=e124]
+                  - generic [ref=e126]:
+                    - heading "Bringing autofill to macOS" [level=3] [ref=e127]
+                    - heading "1Password • Shipped 2025" [level=4] [ref=e128]
+              - link "Project thumbnail for Hack Western 12 Making 0-1 building for everyone Hack Western 12 • Shipped 2025" [ref=e129]:
+                - /url: https://hackwestern.com
+                - generic [ref=e130]:
+                  - img "Project thumbnail for Hack Western 12" [ref=e132]:
+                    - generic "Loading image preview" [ref=e133]
+                    - img "Preview image for Hack Western 12" [ref=e135]
+                  - generic [ref=e137]:
+                    - heading "Making 0-1 building for everyone" [level=3] [ref=e138]
+                    - heading "Hack Western 12 • Shipped 2025" [level=4] [ref=e139]
+              - link "Project thumbnail for Earth Innovation management for Fortune 500s Earth • Shipped 2023" [ref=e140]:
+                - /url: /projects/earth
+                - generic [ref=e141]:
+                  - img "Project thumbnail for Earth" [ref=e143]:
+                    - generic "Loading video preview" [ref=e144]
+                    - generic "Video preview for Earth" [ref=e145]
+                  - generic [ref=e147]:
+                    - heading "Innovation management for Fortune 500s" [level=3] [ref=e148]
+                    - heading "Earth • Shipped 2023" [level=4] [ref=e149]
+    - contentinfo [ref=e151]:
+      - generic [ref=e152]:
+        - generic [ref=e153]:
+          - heading "Designed + Coded with" [level=4] [ref=e155]
+          - button "Like" [ref=e156]:
+            - img [ref=e157]
+          - heading "by Rachel" [level=4] [ref=e160]
+        - generic [ref=e162]:
+          - link "Linkedin" [ref=e163]:
+            - /url: https://www.linkedin.com/in/rachel-jiayi-chen/
+            - heading "Linkedin" [level=4] [ref=e164]
+          - button "EMAIL" [ref=e166]
+          - link "X" [ref=e167]:
+            - /url: https://x.com/racheljychen
+            - heading "X" [level=4] [ref=e168]
+          - link "Github" [ref=e169]:
+            - /url: https://github.com/rachelchxn
+            - heading "Github" [level=4] [ref=e170]
+          - link "Devpost" [ref=e171]:
+            - /url: https://devpost.com/rachelc0715
+            - heading "Devpost" [level=4] [ref=e172]
+  - alert [ref=e173]

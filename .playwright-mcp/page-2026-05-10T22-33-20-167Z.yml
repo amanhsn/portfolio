@@ -1,0 +1,123 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "amanhsn product designer" [ref=e4] [cursor=pointer]:
+        - /url: /
+        - generic [ref=e6]: amanhsn
+        - generic [ref=e7]: ·
+        - generic [ref=e8]: product designer
+      - navigation [ref=e9]:
+        - link "Work 1" [ref=e10] [cursor=pointer]:
+          - /url: "#work"
+          - generic [ref=e11]: Work
+          - generic [ref=e13]: "1"
+        - link "About 2" [ref=e14] [cursor=pointer]:
+          - /url: "#about"
+          - generic [ref=e15]: About
+          - generic [ref=e17]: "2"
+        - link "Fun 3" [ref=e18] [cursor=pointer]:
+          - /url: "#fun"
+          - generic [ref=e19]: Fun
+          - generic [ref=e21]: "3"
+        - link "Resume" [ref=e22] [cursor=pointer]:
+          - /url: /resume.pdf
+          - generic [ref=e23]: Resume
+          - img [ref=e25]
+      - generic [ref=e28]:
+        - link "Get in Touch" [ref=e29] [cursor=pointer]:
+          - /url: https://calendly.com/amanhsn
+          - button "Get in Touch" [ref=e30]:
+            - text: Get in Touch
+            - img [ref=e32]
+        - button "Toggle theme" [ref=e35]
+  - main [ref=e37]:
+    - generic [ref=e38]:
+      - generic [ref=e39]:
+        - generic [ref=e40]:
+          - heading "syed aman hussain" [level=1] [ref=e42]
+          - generic [ref=e44]:
+            - generic [ref=e45]: Product Designer @ ImagineArt
+            - generic [ref=e47]: Islamabad, Pakistan
+        - paragraph [ref=e48]: Product designer bridging the gap between engineering, AI, and pure design. I thrive on product research and collaborating with founders and cross-functional teams to transmute raw ideas into polished, impactful products & features. Currently, I’m pushing the boundaries of generative AI to craft intelligent experiences at ImagineArt (Vyro.ai).
+      - generic [ref=e50]:
+        - generic [ref=e51]:
+          - generic [ref=e53]: "2026"
+          - generic [ref=e54]:
+            - generic [ref=e56]: ImagineArt (Vyro.ai)
+            - generic [ref=e58]: Product Designer
+        - generic [ref=e59]:
+          - generic [ref=e61]: "2026"
+          - generic [ref=e62]:
+            - generic [ref=e64]: Weel Inc
+            - generic [ref=e66]: Founding Product Designer
+        - generic [ref=e67]:
+          - generic [ref=e69]: "2024"
+          - generic [ref=e70]:
+            - generic [ref=e72]: Oryns Solutions
+            - generic [ref=e74]: Product Designer
+        - generic [ref=e75]:
+          - generic [ref=e77]: "2024"
+          - generic [ref=e78]:
+            - generic [ref=e80]: Elite IT Team
+            - generic [ref=e82]: UI/UX Designer
+        - generic [ref=e83]:
+          - generic [ref=e85]: "2023"
+          - generic [ref=e86]:
+            - generic [ref=e88]: PreMed.PK
+            - generic [ref=e90]: UI/UX Design Intern
+      - generic [ref=e93]:
+        - link "LinkedIn" [ref=e94] [cursor=pointer]:
+          - /url: https://linkedin.com/in/amanhsn
+          - img [ref=e95]
+        - link "Behance" [ref=e99] [cursor=pointer]:
+          - /url: https://behance.net/amanhsn
+          - img [ref=e100]
+        - link "CV" [ref=e106] [cursor=pointer]:
+          - /url: /resume.pdf
+          - img [ref=e107]
+        - link "Spotify" [ref=e110] [cursor=pointer]:
+          - /url: https://open.spotify.com/user/pibcpyd0xmdn1wo1xq5kzow9y
+          - img [ref=e111]
+    - generic [ref=e116]:
+      - generic [ref=e118]:
+        - heading "ImagineArt Film Studio" [level=2] [ref=e121]
+        - generic [ref=e122]:
+          - paragraph [ref=e124]: When COVID-19 just hit Russia we calculated the index that showed how well people were self-isolating using anonymous data from our services.
+          - paragraph [ref=e126]: According to the Higher School of Economics, it helped to save 80.000 lives in the first months of the pandemic and became adopted on federal level.
+        - generic [ref=e127]:
+          - generic [ref=e128]:
+            - generic [ref=e130]: Year
+            - generic [ref=e132]: "2026"
+          - generic [ref=e133]:
+            - generic [ref=e135]: Role
+            - generic [ref=e137]: Lead Product Designer
+          - generic [ref=e138]:
+            - generic [ref=e140]: Scope
+            - generic [ref=e142]: Product Strategy, UI/UX Design, Branding, Prototyping
+          - generic [ref=e143]:
+            - generic [ref=e145]: Device
+            - generic [ref=e147]: Web Design
+          - generic [ref=e148]:
+            - generic [ref=e150]: Tools
+            - generic [ref=e152]: Figma, Mixpanel, ImagineArt, Claude AI, Figma MCP
+          - generic [ref=e153]:
+            - generic [ref=e155]: Link
+            - generic [ref=e157]: imagine.art/film-studio
+      - link "ImagineArt Film Studio editor preview" [ref=e158] [cursor=pointer]:
+        - /url: https://imagine.art/film-studio
+        - img "ImagineArt Film Studio editor preview" [ref=e161]
+  - contentinfo [ref=e162]:
+    - generic [ref=e164]:
+      - paragraph [ref=e165]:
+        - text: Designed & Developed with ❤️ by
+        - link "@amanhsn" [ref=e166] [cursor=pointer]:
+          - /url: https://twitter.com/amanhsn
+      - navigation [ref=e167]:
+        - link "BEHANCE" [ref=e168] [cursor=pointer]:
+          - /url: https://behance.net/amanhsn
+        - link "LINKEDIN" [ref=e169] [cursor=pointer]:
+          - /url: https://linkedin.com/in/amanhsn
+        - link "CV" [ref=e170] [cursor=pointer]:
+          - /url: /resume.pdf
+        - link "SPOTIFY" [ref=e171] [cursor=pointer]:
+          - /url: https://open.spotify.com/user/pibcpyd0xmdn1wo1xq5kzow9y

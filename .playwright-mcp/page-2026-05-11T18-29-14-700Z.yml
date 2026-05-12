@@ -1,0 +1,80 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "amanhsn product designer" [ref=e4] [cursor=pointer]:
+        - /url: /
+        - img [ref=e6]
+        - generic [ref=e8]: amanhsn
+        - generic [ref=e9]: ·
+        - generic [ref=e10]: product designer
+      - navigation [ref=e11]:
+        - link "Work" [ref=e12] [cursor=pointer]:
+          - /url: /
+          - generic [ref=e13]: Work
+        - link "About" [ref=e14] [cursor=pointer]:
+          - /url: /about
+          - generic [ref=e15]: About
+        - link "Fun" [ref=e16] [cursor=pointer]:
+          - /url: /fun
+          - generic [ref=e17]: Fun
+        - link "Resume" [ref=e18] [cursor=pointer]:
+          - /url: https://aman-resume.vercel.app
+          - generic [ref=e19]: Resume
+          - img [ref=e20]
+      - generic [ref=e23]:
+        - link "Get in Touch" [ref=e24] [cursor=pointer]:
+          - /url: https://calendly.com/amanhsn
+          - button "Get in Touch" [ref=e25]:
+            - text: Get in Touch
+            - img [ref=e27]
+        - button "Toggle theme" [ref=e30]
+  - main [ref=e32]:
+    - generic [ref=e33]:
+      - generic [ref=e34]:
+        - heading "Designer, builder & avid music listener" [level=2] [ref=e36]
+        - generic [ref=e37]:
+          - paragraph [ref=e38]: I think deeply about people, products, and where technology is headed. Right now that mostly means playing at the edges of genAI at ImagineArt, it’s where the interesting questions live.
+          - paragraph [ref=e39]: CS student by day, designer-engineer by nature. When I’m not in front of a screen, I’m,
+        - list [ref=e40]:
+          - listitem [ref=e41]:
+            - img [ref=e42]
+            - generic [ref=e44]: coffee maxxing
+          - listitem [ref=e45]:
+            - img [ref=e46]
+            - generic [ref=e48]: touching grass
+          - listitem [ref=e49]:
+            - img [ref=e50]
+            - generic [ref=e52]: curating mixtapes
+          - listitem [ref=e53]:
+            - img [ref=e54]
+            - generic [ref=e56]: listening, listeing & listening — to music.
+        - paragraph [ref=e57]:
+          - text: Working on something cool? Say hi. —
+          - link "LinkedIn" [ref=e58] [cursor=pointer]:
+            - /url: https://linkedin.com/in/amanhsn
+          - text: ·
+          - link "X" [ref=e59] [cursor=pointer]:
+            - /url: https://twitter.com/amanhsn
+          - text: ·
+          - link "email" [ref=e60] [cursor=pointer]:
+            - /url: mailto:syedamanhsn@gmail.com
+      - generic [ref=e61]:
+        - generic [ref=e62]:
+          - heading "Gallery" [level=3] [ref=e63]
+          - paragraph [ref=e64]: Scroll to view, click to expand
+        - list [ref=e68]
+  - contentinfo [ref=e69]:
+    - generic [ref=e70]:
+      - paragraph [ref=e71]:
+        - text: Designed & Developed with ❤️ by
+        - link "@amanhsn" [ref=e72] [cursor=pointer]:
+          - /url: https://twitter.com/amanhsn
+      - navigation [ref=e73]:
+        - link "BEHANCE" [ref=e74] [cursor=pointer]:
+          - /url: https://behance.net/amanhsn
+        - link "LINKEDIN" [ref=e75] [cursor=pointer]:
+          - /url: https://linkedin.com/in/amanhsn
+        - link "CV" [ref=e76] [cursor=pointer]:
+          - /url: https://aman-resume.vercel.app
+        - link "SPOTIFY" [ref=e77] [cursor=pointer]:
+          - /url: https://open.spotify.com/user/pibcpyd0xmdn1wo1xq5kzow9y

@@ -1,0 +1,101 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "amanhsn" [ref=e4]:
+        - /url: /
+        - img [ref=e6]
+        - generic [ref=e9]: amanhsn
+      - generic [ref=e10]:
+        - button "Toggle theme" [ref=e11]:
+          - img [ref=e12]
+        - button "Open menu" [ref=e18]:
+          - img [ref=e19]
+  - main [ref=e20]:
+    - generic [ref=e21]:
+      - generic [ref=e22]:
+        - generic [ref=e23]:
+          - heading "syed aman hussain" [level=1] [ref=e25]
+          - generic [ref=e27]:
+            - generic [ref=e28]: Product Designer @ ImagineArt
+            - generic [ref=e29]: Islamabad, Pakistan
+        - paragraph [ref=e30]: Product designer bridging the gap between engineering, AI, and pure design. I thrive on product research and collaborating with founders and cross-functional teams to transmute raw ideas into polished, impactful products & features. Currently, I’m pushing the boundaries of generative AI to craft intelligent experiences at ImagineArt (Vyro.ai).
+      - generic [ref=e32]:
+        - generic [ref=e33]:
+          - generic [ref=e34]: "2026"
+          - generic [ref=e35]: ImagineArt (Vyro.ai)
+          - generic [ref=e36]: Product Designer
+        - generic [ref=e37]:
+          - generic [ref=e38]: "2026"
+          - generic [ref=e39]: Weel Inc
+          - generic [ref=e40]: Founding Product Designer
+        - generic [ref=e41]:
+          - generic [ref=e42]: "2024"
+          - generic [ref=e43]: Oryns Solutions
+          - generic [ref=e44]: Product Designer
+        - generic [ref=e45]:
+          - generic [ref=e46]: "2024"
+          - generic [ref=e47]: Elite IT Team
+          - generic [ref=e48]: UI/UX Designer
+        - generic [ref=e49]:
+          - generic [ref=e50]: "2023"
+          - generic [ref=e51]: PreMed.PK
+          - generic [ref=e52]: UI/UX Design Intern
+      - generic [ref=e55]:
+        - link "LinkedIn" [ref=e56]:
+          - /url: https://linkedin.com/in/amanhsn
+          - img [ref=e57]
+        - link "Behance" [ref=e61]:
+          - /url: https://behance.net/amanhsn
+          - img [ref=e62]
+        - link "CV" [ref=e68]:
+          - /url: https://aman-resume.vercel.app
+          - img [ref=e69]
+        - link "Spotify" [ref=e72]:
+          - /url: https://open.spotify.com/user/pibcpyd0xmdn1wo1xq5kzow9y
+          - img [ref=e73]
+    - generic [ref=e78]:
+      - generic [ref=e80]:
+        - heading "ImagineArt Film Studio" [level=2] [ref=e83]
+        - generic [ref=e84]:
+          - paragraph [ref=e86]: When COVID-19 just hit Russia we calculated the index that showed how well people were self-isolating using anonymous data from our services.
+          - paragraph [ref=e88]: According to the Higher School of Economics, it helped to save 80.000 lives in the first months of the pandemic and became adopted on federal level.
+        - generic [ref=e89]:
+          - generic [ref=e90]:
+            - generic [ref=e92]: Year
+            - generic [ref=e94]: "2026"
+          - generic [ref=e95]:
+            - generic [ref=e97]: Role
+            - generic [ref=e99]: Lead Product Designer
+          - generic [ref=e100]:
+            - generic [ref=e102]: Scope
+            - generic [ref=e104]: Product Strategy, UI/UX Design, Branding, Prototyping
+          - generic [ref=e105]:
+            - generic [ref=e107]: Device
+            - generic [ref=e109]: Web Design
+          - generic [ref=e110]:
+            - generic [ref=e112]: Tools
+            - generic [ref=e114]: Figma, Mixpanel, ImagineArt, Claude AI, Figma MCP
+          - generic [ref=e115]:
+            - generic [ref=e117]: Link
+            - generic [ref=e119]: imagine.art/film-studio
+      - link "ImagineArt Film Studio editor preview" [ref=e120]:
+        - /url: https://imagine.art/film-studio
+        - img "ImagineArt Film Studio editor preview" [ref=e123]
+  - contentinfo [ref=e124]:
+    - generic [ref=e125]:
+      - paragraph [ref=e126]:
+        - text: Designed & Developed with ❤️ by
+        - link "@amanhsn" [ref=e127]:
+          - /url: https://twitter.com/amanhsn
+      - navigation [ref=e128]:
+        - link "BEHANCE" [ref=e129]:
+          - /url: https://behance.net/amanhsn
+        - link "LINKEDIN" [ref=e130]:
+          - /url: https://linkedin.com/in/amanhsn
+        - link "CV" [ref=e131]:
+          - /url: https://aman-resume.vercel.app
+        - link "SPOTIFY" [ref=e132]:
+          - /url: https://open.spotify.com/user/pibcpyd0xmdn1wo1xq5kzow9y
+  - button "Open Next.js Dev Tools" [ref=e138] [cursor=pointer]:
+    - img [ref=e139]
+  - alert [ref=e142]

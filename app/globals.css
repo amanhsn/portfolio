@@ -1,0 +1,380 @@
+@import "tailwindcss";
+
+/* =========================================================
+   Design system — values for LIGHT pulled verbatim from
+   Figma kSO3qoWUMaLE2GTx9la7LC frame 84:7189.
+   DARK is engineered to be the inverse with WCAG-AA contrast,
+   following 4-step text hierarchy (primary→secondary→tertiary→quaternary)
+   and a 3-step border hierarchy (subtle→default→strong).
+   ========================================================= */
+
+@theme {
+  /* Only --font-sans is registered in @theme so `font-sans` utility uses Satoshi.
+     Other font CSS vars come from next/font on <html> and are read directly. */
+  --font-sans: "Satoshi", ui-sans-serif, system-ui, -apple-system, sans-serif;
+
+  /* Radii */
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-pill: 999px;
+
+  /* Tailwind color utilities map to semantic tokens */
+  --color-bg: var(--bg);
+  --color-bg-elevated: var(--bg-elevated);
+  --color-bg-muted: var(--bg-muted);
+  --color-fg: var(--text-primary);
+  --color-fg-muted: var(--text-secondary);
+  --color-fg-subtle: var(--text-tertiary);
+  --color-border: var(--border-default);
+  --color-border-strong: var(--border-strong);
+  --color-accent: var(--accent);
+  --color-accent-fg: var(--accent-fg);
+  --color-divider: var(--border-row);
+}
+
+/* =========================================================
+   LIGHT (default) — values from Figma exactly.
+   ========================================================= */
+:root {
+  /* Surfaces */
+  --bg: #ffffff;
+  --bg-elevated: #ffffff;
+  --bg-muted: #fafafa;
+
+  /* Text hierarchy
+     primary   – main body / headings    (Figma: rgba(0,0,0,0.86))
+     secondary – muted body / table-label (Figma: rgba(18,18,18,0.75))
+     tertiary  – timeline muted          (Figma: rgba(50,64,79,0.58))
+     quaternary– most-muted              (≈ tertiary at 0.4 opacity)
+     strong    – role line / "Strong →"  (Figma: rgba(18,18,18,0.8))
+  */
+  --text-primary: rgba(0, 0, 0, 0.86);
+  --text-secondary: rgba(18, 18, 18, 0.75);
+  --text-tertiary: rgba(50, 64, 79, 0.58);
+  --text-quaternary: rgba(50, 64, 79, 0.35);
+  --text-strong: rgba(18, 18, 18, 0.8);
+
+  /* Special-purpose text (Figma hero) */
+  --text-name: #121221;       /* hero name */
+  --text-body: #121212;        /* hero bio */
+  --text-company: #32404f;     /* experience company */
+  --text-accent-red: #ff0004;  /* "AVID" word in About headline */
+
+  /* Borders — 3 weights */
+  --border-subtle: rgba(50, 64, 79, 0.15);   /* horizontal border under socials */
+  --border-default: #d9d9de;                  /* media card border */
+  --border-strong: #d4d4d4;                   /* table row borders, dividers */
+  --border-row: #d4d4d4;
+
+  /* Accent */
+  --accent: #0080ff;
+  --accent-fg: #ffffff;
+
+  /* Cursor (monotone) */
+  --cursor-bg: var(--text-primary);
+  --cursor-fg: var(--bg);
+  --cursor-shadow: 0 2px 12px rgba(0, 0, 0, 0.18);
+
+  /* Card shadow */
+  --shadow-card: 0 4px 15px rgba(0, 0, 0, 0.1);
+
+  /* Pill / interactive surface */
+  --pill-bg: var(--bg);
+  --pill-border: var(--border-default);
+  --pill-bg-active: #f3f3f4;
+  --tag-bg: #f6f6f7;
+
+  color-scheme: light;
+}
+
+/* =========================================================
+   DARK — engineered system, mirrors light hierarchy.
+   - Background steps: 0a → 12 → 1a (3 elevation levels).
+   - Text steps: 0.92 → 0.72 → 0.5 → 0.32 (WCAG-AA at all sizes).
+   - Borders: 0.08 → 0.14 → 0.22.
+   ========================================================= */
+[data-theme="dark"] {
+  /* Surfaces */
+  --bg: #0a0a0b;
+  --bg-elevated: #131316;
+  --bg-muted: #1a1a1d;
+
+  /* Text hierarchy (mirrors light) */
+  --text-primary: rgba(255, 255, 255, 0.92);
+  --text-secondary: rgba(255, 255, 255, 0.72);
+  --text-tertiary: rgba(255, 255, 255, 0.5);
+  --text-quaternary: rgba(255, 255, 255, 0.32);
+  --text-strong: rgba(255, 255, 255, 0.85);
+
+  /* Special-purpose text */
+  --text-name: #f4f4f6;
+  --text-body: #ededed;
+  --text-company: #e2e6eb;
+  --text-accent-red: #ff5a5e;  /* AVID — softened for dark mode */
+
+  /* Borders — 3 weights */
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-default: rgba(255, 255, 255, 0.14);
+  --border-strong: rgba(255, 255, 255, 0.22);
+  --border-row: rgba(255, 255, 255, 0.14);
+
+  /* Accent */
+  --accent: #3399ff;
+  --accent-fg: #0a0a0b;
+
+  /* Cursor flips */
+  --cursor-bg: #ffffff;
+  --cursor-fg: #0a0a0b;
+  --cursor-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+
+  /* Stronger shadow on dark */
+  --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.45);
+
+  /* Pill interactive */
+  --pill-bg: var(--bg);
+  --pill-border: var(--border-default);
+  --pill-bg-active: rgba(255, 255, 255, 0.06);
+  --tag-bg: rgba(255, 255, 255, 0.04);
+
+  color-scheme: dark;
+}
+
+/* =========================================================
+   Base
+   ========================================================= */
+html,
+body {
+  background: var(--bg);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Horizontal clip lives on body, not <main>. If <main> has overflow-x: hidden,
+   browsers compute overflow-y as auto, which creates a new scroll context and
+   breaks position: sticky for descendants. */
+body {
+  overflow-x: clip;
+}
+
+/* Custom-cursor mode */
+html[data-cursor-active="true"] *,
+html[data-cursor-active="true"] *::before,
+html[data-cursor-active="true"] *::after {
+  cursor: none !important;
+}
+html[data-cursor-active="true"]
+  :where(input, textarea, select, [contenteditable="true"]) {
+  cursor: text !important;
+}
+@media (pointer: coarse), (prefers-reduced-motion: reduce) {
+  html[data-cursor-active="true"] *,
+  html[data-cursor-active="true"] *::before,
+  html[data-cursor-active="true"] *::after {
+    cursor: revert !important;
+  }
+}
+
+/* =========================================================
+   Typography presets — Figma 84:7189 verbatim for size/font/lh/ls.
+   COLOR refs are semantic so they flip with theme.
+   Wrapped in @layer components so Tailwind utilities override.
+   ========================================================= */
+
+@layer components {
+
+/* Hero name — Inter Regular 20/24 +2.8px uppercase */
+.t-hero-name {
+  font-family: var(--font-inter);
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: 2.8px;
+  text-transform: uppercase;
+  color: var(--text-name);
+}
+
+/* Hero role line — Satoshi Bold 18/28.8 */
+.t-hero-role {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 28.8px;
+  color: var(--text-strong);
+}
+
+/* Hero bio — Satoshi Regular 20 / normal */
+.t-hero-body {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 20px;
+  line-height: normal;
+  color: var(--text-body);
+}
+
+/* Experience year — Geist Mono Regular 15/22.5 uppercase muted */
+.t-exp-year {
+  font-family: var(--font-geist-mono);
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 22.5px;
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+}
+
+/* Experience company — Geist Regular 15/22.5 */
+.t-exp-company {
+  font-family: var(--font-geist);
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 22.5px;
+  color: var(--text-company);
+}
+
+/* Experience role — Geist Regular 15/22.5 muted */
+.t-exp-role {
+  font-family: var(--font-geist);
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 22.5px;
+  color: var(--text-tertiary);
+}
+
+/* Project heading — Satoshi Bold 16 / normal */
+.t-project-name {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 16px;
+  line-height: normal;
+  color: var(--text-primary);
+}
+
+/* Project body — Satoshi Regular 15.1/20.25 +0.473 */
+.t-project-body {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 15.1px;
+  line-height: 20.25px;
+  letter-spacing: 0.473px;
+  color: var(--text-primary);
+}
+
+/* Table label — Satoshi Regular 15.8/20.25 +0.473 */
+.t-table-label {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 15.8px;
+  line-height: 20.25px;
+  letter-spacing: 0.473px;
+  color: var(--text-secondary);
+}
+
+/* Table value — Satoshi Medium 16/20.25 +0.473 */
+.t-table-value {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20.25px;
+  letter-spacing: 0.473px;
+  color: var(--text-primary);
+}
+
+/* Footer link — JetBrains Mono Medium 14/14 uppercase */
+.t-footer-link {
+  font-family: var(--font-jetbrains);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 14px;
+  text-transform: uppercase;
+  color: var(--text-primary);
+}
+
+/* Footer body — Satoshi Regular 14/20.25 */
+.t-footer-body {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20.25px;
+  color: var(--text-primary);
+}
+
+/* Navbar wordmark — Satoshi Bold 20/24 -0.2 */
+.t-nav-wordmark {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: -0.2px;
+  color: var(--text-primary);
+}
+
+/* Navbar link label — Satoshi Medium 14/20.25 */
+.t-nav-link {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20.25px;
+}
+
+/* Mono micro — DM Mono Medium 10/12 +2.8 */
+.t-mono-xs {
+  font-family: var(--font-dm-mono);
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 12px;
+  letter-spacing: 2.8px;
+  text-transform: uppercase;
+}
+
+/* --- Generic semantic presets (used by /system + Tailwind tools) --- */
+
+.t-h2 {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: -0.2px;
+}
+.t-subhead {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 28.8px;
+  letter-spacing: -0.2px;
+}
+.t-body {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 25.6px;
+}
+.t-meta {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20.25px;
+}
+.t-eyebrow {
+  font-family: var(--font-jetbrains);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 14px;
+  letter-spacing: 0.47px;
+  text-transform: uppercase;
+}
+.t-link {
+  font-family: var(--font-jetbrains);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 14px;
+}
+
+} /* end @layer components */
+
+::selection {
+  background: var(--text-primary);
+  color: var(--bg);
+}

@@ -1,0 +1,61 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "amanhsn" [ref=e4] [cursor=pointer]:
+        - /url: /
+        - img [ref=e6]
+        - generic [ref=e8]: amanhsn
+      - generic [ref=e9]:
+        - button "Toggle theme" [ref=e10]
+        - button "Open menu" [ref=e12]:
+          - img [ref=e13]
+  - main [ref=e14]:
+    - generic [ref=e15]:
+      - generic [ref=e16]:
+        - heading "Designer, builder & avid music listener" [level=2] [ref=e18]
+        - generic [ref=e19]:
+          - paragraph [ref=e20]: I think deeply about people, products, and where technology is headed. Right now that mostly means playing at the edges of genAI at ImagineArt, it’s where the interesting questions live.
+          - paragraph [ref=e21]: CS student by day, designer-engineer by nature. When I’m not in front of a screen, I’m,
+        - list [ref=e22]:
+          - listitem [ref=e23]:
+            - img [ref=e24]
+            - generic [ref=e26]: coffee maxxing
+          - listitem [ref=e27]:
+            - img [ref=e28]
+            - generic [ref=e30]: touching grass
+          - listitem [ref=e31]:
+            - img [ref=e32]
+            - generic [ref=e34]: curating mixtapes
+          - listitem [ref=e35]:
+            - img [ref=e36]
+            - generic [ref=e38]: listening, listeing & listening — to music.
+        - paragraph [ref=e39]:
+          - text: Working on something cool? Say hi. —
+          - link "LinkedIn" [ref=e40] [cursor=pointer]:
+            - /url: https://linkedin.com/in/amanhsn
+          - text: ·
+          - link "X" [ref=e41] [cursor=pointer]:
+            - /url: https://twitter.com/amanhsn
+          - text: ·
+          - link "email" [ref=e42] [cursor=pointer]:
+            - /url: mailto:syedamanhsn@gmail.com
+      - generic [ref=e43]:
+        - generic [ref=e44]:
+          - heading "Gallery" [level=3] [ref=e45]
+          - paragraph [ref=e46]: Scroll to view, click to expand
+        - list [ref=e50]
+  - contentinfo [ref=e51]:
+    - generic [ref=e52]:
+      - paragraph [ref=e53]:
+        - text: Designed & Developed with ❤️ by
+        - link "@amanhsn" [ref=e54] [cursor=pointer]:
+          - /url: https://twitter.com/amanhsn
+      - navigation [ref=e55]:
+        - link "BEHANCE" [ref=e56] [cursor=pointer]:
+          - /url: https://behance.net/amanhsn
+        - link "LINKEDIN" [ref=e57] [cursor=pointer]:
+          - /url: https://linkedin.com/in/amanhsn
+        - link "CV" [ref=e58] [cursor=pointer]:
+          - /url: https://aman-resume.vercel.app
+        - link "SPOTIFY" [ref=e59] [cursor=pointer]:
+          - /url: https://open.spotify.com/user/pibcpyd0xmdn1wo1xq5kzow9y
