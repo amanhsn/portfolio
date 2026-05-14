@@ -1,7 +1,6 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
-import Image from "next/image";
 import { gsap } from "gsap";
 import { MotionPathPlugin } from "gsap/MotionPathPlugin";
 import { ChevronLeft, ChevronRight } from "lucide-react";
@@ -85,13 +84,6 @@ export function GalleryCarousel({ startIndex = 0 }: GalleryCarouselProps) {
           </span>
         </div>
       </div>
-
-      {/* DOT / THUMB CONTROLLER — below the frame, in its own row */}
-      <DotTabs
-        images={images}
-        active={opened}
-        onSelect={(i) => setOpened(i)}
-      />
 
       {/* PREV / NEXT — flanking the image */}
       <button
@@ -262,48 +254,3 @@ function ClippedImage({
   );
 }
 
-/* ── DotTabs: HTML thumbnail row beneath the carousel ───────────────────── */
-
-interface DotTabsProps {
-  images: GalleryImage[];
-  active: number;
-  onSelect: (index: number) => void;
-}
-
-function DotTabs({ images, active, onSelect }: DotTabsProps) {
-  return (
-    <div
-      role="tablist"
-      aria-label="Gallery thumbnails"
-      className="flex flex-wrap items-center justify-center gap-2"
-    >
-      {images.map((image, i) => {
-        const isActive = i === active;
-        return (
-          <button
-            key={image.src}
-            type="button"
-            role="tab"
-            aria-selected={isActive}
-            aria-label={`Show ${image.title}`}
-            data-cursor-text={image.title}
-            onClick={() => onSelect(i)}
-            className={`relative h-9 w-9 shrink-0 overflow-hidden rounded-full transition-all duration-200 ease-out sm:h-10 sm:w-10 ${
-              isActive
-                ? "scale-110 ring-2 ring-[var(--text-primary)] ring-offset-2 ring-offset-[var(--bg)]"
-                : "scale-100 opacity-60 hover:opacity-100 hover:scale-105"
-            }`}
-          >
-            <Image
-              src={image.src}
-              alt=""
-              fill
-              sizes="40px"
-              className="object-cover"
-            />
-          </button>
-        );
-      })}
-    </div>
-  );
-}

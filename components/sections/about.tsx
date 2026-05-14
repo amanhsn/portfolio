@@ -82,14 +82,14 @@ export function About() {
           {BULLETS.map((row) => (
             <li
               key={row.label}
-              className="group flex cursor-none items-center gap-[10px] text-fg transition-colors hover:text-fg"
+              className="group flex cursor-none items-center gap-[10px] text-fg"
               data-cursor-image={row.image}
             >
               <AsteriskLogo
                 size={18}
-                className="text-fg-muted transition-colors group-hover:text-fg"
+                className="text-fg-muted transition-colors duration-200 group-hover:text-fg-subtle"
               />
-              <span className="t-hero-body text-[15px] leading-[24px] transition-opacity duration-200 group-hover:opacity-80 sm:text-[18px] sm:leading-[28.8px]">
+              <span className="t-hero-body text-[15px] leading-[24px] text-fg transition-colors duration-200 group-hover:text-fg-muted sm:text-[18px] sm:leading-[28.8px]">
                 {row.label}
               </span>
             </li>
@@ -104,7 +104,7 @@ export function About() {
             target="_blank"
             rel="noopener noreferrer"
             data-cursor-text="LinkedIn"
-            className="underline decoration-[var(--text-tertiary)] underline-offset-4 transition-colors hover:text-fg"
+            className="underline decoration-[var(--text-tertiary)] underline-offset-4 transition-colors duration-200 hover:text-fg-muted"
           >
             LinkedIn
           </a>{" "}
@@ -114,7 +114,7 @@ export function About() {
             target="_blank"
             rel="noopener noreferrer"
             data-cursor-text="X"
-            className="underline decoration-[var(--text-tertiary)] underline-offset-4 transition-colors hover:text-fg"
+            className="underline decoration-[var(--text-tertiary)] underline-offset-4 transition-colors duration-200 hover:text-fg-muted"
           >
             X
           </a>{" "}
@@ -122,7 +122,7 @@ export function About() {
           <a
             href="mailto:syedamanhsn@gmail.com"
             data-cursor-text="Email"
-            className="underline decoration-[var(--text-tertiary)] underline-offset-4 transition-colors hover:text-fg"
+            className="underline decoration-[var(--text-tertiary)] underline-offset-4 transition-colors duration-200 hover:text-fg-muted"
           >
             email
           </a>
