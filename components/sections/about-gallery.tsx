@@ -74,7 +74,7 @@ export function AboutGallery() {
             {/* Col 4 - counter parallax (mirrors col 2) */}
             <GalleryCol
               yRange={["8%", "1%"]}
-              className="mt-[-8%] hidden sm:flex"
+              className="mt-[-8%]"
             >
               {cols[3].map((img) => (
                 <GalleryCard key={img.src} img={img} onClick={onCardClick} />
@@ -84,7 +84,7 @@ export function AboutGallery() {
             {/* Col 5 - mirrors col 1 */}
             <GalleryCol
               yRange={["-6%", "0%"]}
-              className="-mt-1 hidden md:flex"
+              className="-mt-1"
             >
               {cols[4].map((img) => (
                 <GalleryCard key={img.src} img={img} onClick={onCardClick} />

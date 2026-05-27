@@ -14,6 +14,7 @@ import { ShippedGrid } from "@/components/case-study/shipped-grid";
 import { OutcomeBlock } from "@/components/case-study/outcome-block";
 import { LearningsBlock } from "@/components/case-study/learnings-block";
 import { NextBlock } from "@/components/case-study/next-block";
+import { DynamicIslandTOC } from "@/components/ui/dynamic-island-toc";
 
 type Params = { params: Promise<{ slug: string }> };
 
@@ -61,6 +62,7 @@ export default async function CaseStudyPage({ params }: Params) {
         <FadeIn><NextBlock next={cs.next} /></FadeIn>
       </main>
       <Footer />
+      <DynamicIslandTOC />
     </>
   );
 }

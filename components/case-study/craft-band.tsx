@@ -11,7 +11,12 @@ export function CraftBand({ craft }: { craft: Craft }) {
   return (
     <section className="w-full bg-[#0c0d10] py-20 text-white md:py-28">
       <div className="mx-auto w-full max-w-[1280px] px-5 md:px-12 lg:px-20">
-        <span className="font-[family-name:var(--font-dm-mono)] text-[13px] font-medium uppercase tracking-[0.22em] text-white/45">
+        <span
+          id="craft"
+          data-toc
+          data-toc-title="Craft"
+          className="font-[family-name:var(--font-dm-mono)] text-[13px] font-medium uppercase tracking-[0.22em] text-white/45"
+        >
           05 · Craft Moment
         </span>
         <h2 className="mt-6 max-w-[820px] font-[family-name:var(--font-sans)] text-[26px] font-bold leading-[1.25] md:text-[34px]">

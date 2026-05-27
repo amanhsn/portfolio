@@ -32,7 +32,7 @@ export default function PlaygroundPage() {
 
             {/* Body */}
             <p className="t-hero-body w-full text-[15px] leading-[24px] sm:text-[20px] sm:leading-normal">
-              I max out my claude plan for fun, trying out different ideas &amp;
+              I max out my Claude plan for fun, trying out different ideas &amp;
               building plugins, extensions and web apps for utility which help me
               in my design process. Every idea that I design, I try vibe coding it
               entirely. This helps me understand certain constraints I might be
