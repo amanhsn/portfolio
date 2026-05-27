@@ -14,7 +14,7 @@ export default function Home() {
         <div className="pointer-events-none absolute inset-x-0 top-0 z-0 mx-auto w-full max-w-[1441px]">
           <AsteriskDecoration position="top-right" />
         </div>
-        {/* Bottom-left corner — appears near last project */}
+        {/* Bottom-left corner - appears near last project */}
         <div className="pointer-events-none absolute inset-x-0 bottom-0 z-0 mx-auto w-full max-w-[1441px]">
           <AsteriskDecoration position="bottom-left" />
         </div>

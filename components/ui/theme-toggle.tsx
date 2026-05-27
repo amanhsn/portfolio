@@ -1,33 +1,105 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useId, useRef, useState } from "react";
 import { flushSync } from "react-dom";
 import { useTheme } from "next-themes";
-import { AnimatePresence, motion } from "motion/react";
-import { Moon, Sun } from "lucide-react";
+import { motion } from "motion/react";
 import { cn } from "@/lib/cn";
 
 /**
- * ThemeToggle — circular view-transition reveal (ruixenui pattern, 21st.dev).
- * Wraps next-themes setTheme inside document.startViewTransition + flushSync,
- * then animates a clip-path circle from the button's centre across the page.
- * Falls back to a plain theme swap on browsers without View Transitions.
+ * ThemeToggle - sun↔moon morph icon (ruixenui animated-theme-toggler, 21st.dev)
+ * driven by next-themes, wrapped in the existing circular view-transition reveal.
  *
- * Container styles match the original button so callers (navbar, /system) don't
- * shift; only the icon swap + page reveal animation changed.
+ * Icon: sun rays retract + rotate away, the centre circle swells into a moon
+ * body, and a mask carves the crescent - all on spring physics. An optional
+ * soft switch-click sounds on toggle (off by default; pass `sound`).
+ *
+ * The next-themes wiring (data-theme attribute, persistence, SSR-safe mount)
+ * and the page-wide clip-path reveal are kept intact, and the button keeps the
+ * original pill styling so the navbar / system page don't shift.
  */
-export function ThemeToggle({ className }: { className?: string }) {
+
+/* ── Audio: tiny synthesized switch-click ── */
+
+let _ctx: AudioContext | null = null;
+let _buf: AudioBuffer | null = null;
+
+function audioCtx() {
+  if (!_ctx) {
+    _ctx = new (window.AudioContext ||
+      (window as unknown as { webkitAudioContext: typeof AudioContext })
+        .webkitAudioContext)();
+  }
+  if (_ctx.state === "suspended") _ctx.resume();
+  return _ctx;
+}
+
+function ensureBuf(ac: AudioContext): AudioBuffer {
+  if (_buf && _buf.sampleRate === ac.sampleRate) return _buf;
+  const rate = ac.sampleRate;
+  const len = Math.floor(rate * 0.006);
+  const buf = ac.createBuffer(1, len, rate);
+  const ch = buf.getChannelData(0);
+  for (let i = 0; i < len; i++) {
+    const t = i / len;
+    const sine = Math.sin(2 * Math.PI * 3400 * t);
+    const noise = Math.random() * 2 - 1;
+    ch[i] = (sine * 0.6 + noise * 0.4) * (1 - t) ** 3;
+  }
+  _buf = buf;
+  return buf;
+}
+
+function tick(last: { current: number }) {
+  const now = performance.now();
+  if (now - last.current < 80) return;
+  last.current = now;
+  try {
+    const ac = audioCtx();
+    const buf = ensureBuf(ac);
+    const src = ac.createBufferSource();
+    const gain = ac.createGain();
+    src.buffer = buf;
+    gain.gain.value = 0.08;
+    src.connect(gain);
+    gain.connect(ac.destination);
+    src.start();
+  } catch {
+    /* silent */
+  }
+}
+
+/* ── Component ── */
+
+export function ThemeToggle({
+  className,
+  sound = false,
+}: {
+  className?: string;
+  sound?: boolean;
+}) {
   const { resolvedTheme, setTheme } = useTheme();
   const buttonRef = useRef<HTMLButtonElement>(null);
+  const lastSnd = useRef(0);
+  const isFirst = useRef(true);
   const [mounted, setMounted] = useState(false);
+  const rawId = useId();
+  const maskId = `att${rawId.replace(/:/g, "")}`;
 
-  useEffect(() => setMounted(true), []);
+  useEffect(() => {
+    setMounted(true);
+    requestAnimationFrame(() => {
+      isFirst.current = false;
+    });
+  }, []);
 
   const isDark = mounted && resolvedTheme === "dark";
 
   const toggle = useCallback(async () => {
     const button = buttonRef.current;
     const next = isDark ? "light" : "dark";
+
+    if (sound) tick(lastSnd);
 
     // Browsers without View Transitions: just swap.
     if (!button || typeof document.startViewTransition !== "function") {
@@ -66,7 +138,11 @@ export function ThemeToggle({ className }: { className?: string }) {
         pseudoElement: "::view-transition-new(root)",
       },
     );
-  }, [isDark, setTheme]);
+  }, [isDark, setTheme, sound]);
+
+  const spring = isFirst.current
+    ? { duration: 0 }
+    : { type: "spring" as const, stiffness: 380, damping: 30 };
 
   return (
     <button
@@ -81,33 +157,66 @@ export function ThemeToggle({ className }: { className?: string }) {
       )}
     >
       {mounted ? (
-        <AnimatePresence mode="wait" initial={false}>
-          {isDark ? (
-            <motion.span
-              key="sun"
-              initial={{ opacity: 0, scale: 0.55, rotate: 25 }}
-              animate={{ opacity: 1, scale: 1, rotate: 0 }}
-              exit={{ opacity: 0, scale: 0.55, rotate: -25 }}
-              transition={{ duration: 0.22, ease: "easeOut" }}
-              className="inline-flex"
-            >
-              <Sun size={14} strokeWidth={1.75} />
-            </motion.span>
-          ) : (
-            <motion.span
-              key="moon"
-              initial={{ opacity: 0, scale: 0.55, rotate: -25 }}
-              animate={{ opacity: 1, scale: 1, rotate: 0 }}
-              exit={{ opacity: 0, scale: 0.55, rotate: 25 }}
-              transition={{ duration: 0.22, ease: "easeOut" }}
-              className="inline-flex"
-            >
-              <Moon size={14} strokeWidth={1.75} />
-            </motion.span>
-          )}
-        </AnimatePresence>
+        <motion.svg
+          width="18"
+          height="18"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          initial={false}
+          animate={{ rotate: isDark ? 270 : 0 }}
+          transition={spring}
+          style={{ overflow: "visible" }}
+        >
+          {/* Mask carves the crescent from the centre circle */}
+          <mask id={maskId}>
+            <rect x="0" y="0" width="100%" height="100%" fill="white" />
+            <motion.circle
+              initial={false}
+              animate={{ cx: isDark ? 17 : 33, cy: isDark ? 8 : 0 }}
+              transition={spring}
+              r="9"
+              fill="black"
+            />
+          </mask>
+
+          {/* Centre body - small sun circle or large crescent moon */}
+          <motion.circle
+            cx="12"
+            cy="12"
+            fill="currentColor"
+            stroke="none"
+            mask={`url(#${maskId})`}
+            initial={false}
+            animate={{ r: isDark ? 9 : 5 }}
+            transition={spring}
+          />
+
+          {/* Rays - shrink and rotate away when dark */}
+          <motion.g
+            initial={false}
+            animate={{
+              opacity: isDark ? 0 : 1,
+              scale: isDark ? 0 : 1,
+              rotate: isDark ? -30 : 0,
+            }}
+            transition={spring}
+            style={{ transformOrigin: "12px 12px" }}
+          >
+            <line x1="12" y1="1" x2="12" y2="3" />
+            <line x1="12" y1="21" x2="12" y2="23" />
+            <line x1="1" y1="12" x2="3" y2="12" />
+            <line x1="21" y1="12" x2="23" y2="12" />
+            <line x1="5.64" y1="5.64" x2="4.22" y2="4.22" />
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+            <line x1="5.64" y1="18.36" x2="4.22" y2="19.78" />
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+          </motion.g>
+        </motion.svg>
       ) : (
-        <span className="h-3.5 w-3.5" />
+        <span className="h-[18px] w-[18px]" />
       )}
     </button>
   );

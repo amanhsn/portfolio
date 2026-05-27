@@ -1,0 +1,17 @@
+<svg width="128" height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="128" height="128" rx="28" fill="#D97757"/>
+  <g transform="translate(64,64)" fill="#F7F4EE">
+    <g><rect x="-3.2" y="-36" width="6.4" height="30" rx="3.2"/></g>
+    <g transform="rotate(30)"><rect x="-3.2" y="-36" width="6.4" height="30" rx="3.2"/></g>
+    <g transform="rotate(60)"><rect x="-3.2" y="-36" width="6.4" height="30" rx="3.2"/></g>
+    <g transform="rotate(90)"><rect x="-3.2" y="-36" width="6.4" height="30" rx="3.2"/></g>
+    <g transform="rotate(120)"><rect x="-3.2" y="-36" width="6.4" height="30" rx="3.2"/></g>
+    <g transform="rotate(150)"><rect x="-3.2" y="-36" width="6.4" height="30" rx="3.2"/></g>
+    <g transform="rotate(180)"><rect x="-3.2" y="-36" width="6.4" height="30" rx="3.2"/></g>
+    <g transform="rotate(210)"><rect x="-3.2" y="-36" width="6.4" height="30" rx="3.2"/></g>
+    <g transform="rotate(240)"><rect x="-3.2" y="-36" width="6.4" height="30" rx="3.2"/></g>
+    <g transform="rotate(270)"><rect x="-3.2" y="-36" width="6.4" height="30" rx="3.2"/></g>
+    <g transform="rotate(300)"><rect x="-3.2" y="-36" width="6.4" height="30" rx="3.2"/></g>
+    <g transform="rotate(330)"><rect x="-3.2" y="-36" width="6.4" height="30" rx="3.2"/></g>
+  </g>
+</svg>

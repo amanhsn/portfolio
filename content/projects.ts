@@ -9,6 +9,8 @@ export type Project = {
   paragraphs: string[];
   rows: TableRow[];
   href?: string;
+  /** When set, the tile links to the internal case study at /work/[slug]. */
+  caseStudySlug?: string;
   side: "left" | "right";
   media: {
     src: string;
@@ -21,8 +23,8 @@ export const projects: Project[] = [
     slug: "imagineart-film-studio",
     name: "ImagineArt Film Studio",
     paragraphs: [
-      "When COVID-19 just hit Russia we calculated the index that showed how well people were self-isolating using anonymous data from our services.",
-      "According to the Higher School of Economics, it helped to save 80.000 lives in the first months of the pandemic and became adopted on federal level.",
+      "Film Studio turns ImagineArt's prompt-and-pray clip tool into a project-based film environment, built on production controls and five output types instead of a single text box.",
+      "A model-agnostic shell that routes every shot to the best cinematic image and video model available, all on one ImagineArt credit pool.",
     ],
     rows: [
       { label: "Year", value: "2026" },
@@ -39,17 +41,18 @@ export const projects: Project[] = [
       { label: "Link", value: "imagine.art/film-studio" },
     ],
     href: "https://imagine.art/film-studio",
+    caseStudySlug: "film-studio",
     side: "left",
     media: {
-      src: "https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?auto=format&fit=crop&w=1600&q=80",
-      alt: "ImagineArt Film Studio editor preview",
+      src: "/case-studies/film-studio/hero.png",
+      alt: "ImagineArt Film Studio workspace",
     },
   },
   {
     slug: "imagineart-edit-mode",
     name: "ImagineArt Edit Mode",
     paragraphs: [
-      "Edit Mode brings inline, brush-driven generative editing right into the canvas — no leaving the project, no popovers, no detours.",
+      "Edit Mode brings inline, brush-driven generative editing right into the canvas. No leaving the project, no popovers, no detours.",
       "Shipped as the default editing surface for ImagineArt creators; reduced average edit-to-export time by 38% in the first month of public release.",
     ],
     rows: [
@@ -98,14 +101,14 @@ export const projects: Project[] = [
     side: "left",
     media: {
       src: "https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&w=1600&q=80",
-      alt: "Power Zone — solar and wind energy farm",
+      alt: "Power Zone solar and wind energy farm",
     },
   },
   {
     slug: "imagineart-references",
     name: "ImagineArt References",
     paragraphs: [
-      "References lets creators attach inspiration — characters, styles, palettes — directly to a prompt, so the model stays loyal to the look they want.",
+      "References lets creators attach inspiration, like characters, styles and palettes, directly to a prompt, so the model stays loyal to the look they want.",
       "Designed the reference manager, drag-and-drop pipeline, and weighting controls. Shipped to all paid creators; reference attach rate hit 71% in week one.",
     ],
     rows: [
@@ -126,7 +129,7 @@ export const projects: Project[] = [
     side: "right",
     media: {
       src: "https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?auto=format&fit=crop&w=1600&q=80",
-      alt: "ImagineArt References — creative inspiration board",
+      alt: "ImagineArt References creative inspiration board",
     },
   },
 ];

@@ -4,7 +4,7 @@ import { Footer } from "@/components/site/footer";
 import { AsteriskDecoration } from "@/components/site/asterisk-decoration";
 
 export const metadata = {
-  title: "About — Aman's Portfolio",
+  title: "About · Aman's Portfolio",
 };
 
 export default function AboutPage() {

@@ -1,7 +1,7 @@
 import { cn } from "@/lib/cn";
 
 /**
- * Asterisk logo — inline SVG so `currentColor` inherits the surrounding
+ * Asterisk logo - inline SVG so `currentColor` inherits the surrounding
  * text color (flips with light/dark theme automatically).
  *
  * Two sizes:

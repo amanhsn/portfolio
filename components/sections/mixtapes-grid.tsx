@@ -12,7 +12,7 @@ interface MixtapesGridProps {
 }
 
 /**
- * MixtapesGrid — playlists rendered as cassette/cover cards.
+ * MixtapesGrid - playlists rendered as cassette/cover cards.
  * Click any card → loads the full playlist (server action) and opens the
  * detail dialog with the track list.
  */

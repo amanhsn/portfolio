@@ -5,7 +5,7 @@ import { AsteriskLogo } from "@/components/ui/asterisk-logo";
 import { AboutGallery } from "./about-gallery";
 
 /**
- * About — Figma 48:2996.
+ * About - Figma 48:2996.
  * Headline + bio + asterisk bullet list + CTA line, then the scattered gallery.
  * Anchored at #about for navbar linking.
  */
@@ -15,12 +15,10 @@ const fadeUp = {
   animate: { opacity: 1, y: 0 },
 };
 
+const COFFEE_IMG =
+  "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=320&q=80";
+
 const BULLETS: Array<{ label: string; image: string }> = [
-  {
-    label: "coffee maxxing",
-    image:
-      "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=320&q=80",
-  },
   {
     label: "touching grass",
     image:
@@ -31,9 +29,9 @@ const BULLETS: Array<{ label: string; image: string }> = [
     image:
       "https://images.unsplash.com/photo-1481277542470-605612bd2d61?auto=format&fit=crop&w=320&q=80",
   },
-  // typo "listeing" retained verbatim per Figma — intentional playful touch
+  // typo "listeing" retained verbatim per Figma, intentional playful touch
   {
-    label: "listening, listeing & listening — to music.",
+    label: "listening, listeing & listening, to music.",
     image:
       "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=320&q=80",
   },
@@ -55,7 +53,7 @@ export function About() {
         transition={{ duration: 0.4, ease: "easeOut" }}
         className="flex w-full max-w-[1280px] flex-col items-start gap-[16px] sm:p-[12px]"
       >
-        {/* Headline — DESIGNER, BUILDER & AVID MUSIC LISTENER */}
+        {/* Headline - DESIGNER, BUILDER & AVID MUSIC LISTENER */}
         <div className="flex w-full flex-col items-start justify-center overflow-clip">
           <h2 className="t-hero-name text-[17px] tracking-[2.2px] sm:text-[20px] sm:tracking-[2.8px]">
             <span>Designer, builder &amp; </span>
@@ -77,8 +75,30 @@ export function About() {
           </p>
         </div>
 
-        {/* Bullet list — asterisk + label; each row carries an image-cursor preview */}
+        {/* Bullet list - asterisk + label; each row carries an image-cursor
+            preview, and the label underlines on hover so it's clear which is active. */}
         <ul className="flex w-full flex-col items-start gap-[4px] pt-[4px]">
+          {/* First bullet has two independent hover targets:
+              coffeemaxxing → coffee preview, tokenmaxxing → Claude Code icon. */}
+          <li className="flex cursor-none items-center gap-[10px] text-fg">
+            <AsteriskLogo size={18} className="text-fg-muted" />
+            <span className="t-hero-body text-[15px] leading-[24px] text-fg sm:text-[18px] sm:leading-[28.8px]">
+              <span
+                data-cursor-image={COFFEE_IMG}
+                className="underline-offset-4 transition-colors duration-200 hover:text-fg-muted hover:underline"
+              >
+                coffeemaxxing
+              </span>
+              {" + "}
+              <span
+                data-cursor-videos="/tokenmaxxing/1.mp4,/tokenmaxxing/2.mp4,/tokenmaxxing/3.mp4,/tokenmaxxing/4.mp4"
+                className="underline-offset-4 transition-colors duration-200 hover:text-fg-muted hover:underline"
+              >
+                tokenmaxxing
+              </span>
+            </span>
+          </li>
+
           {BULLETS.map((row) => (
             <li
               key={row.label}
@@ -89,7 +109,7 @@ export function About() {
                 size={18}
                 className="text-fg-muted transition-colors duration-200 group-hover:text-fg-subtle"
               />
-              <span className="t-hero-body text-[15px] leading-[24px] text-fg transition-colors duration-200 group-hover:text-fg-muted sm:text-[18px] sm:leading-[28.8px]">
+              <span className="t-hero-body text-[15px] leading-[24px] text-fg underline-offset-4 transition-colors duration-200 group-hover:text-fg-muted group-hover:underline sm:text-[18px] sm:leading-[28.8px]">
                 {row.label}
               </span>
             </li>
@@ -98,7 +118,7 @@ export function About() {
 
         {/* CTA line */}
         <p className="t-hero-body pt-[8px] text-[15px] leading-[24px] sm:text-[18px] sm:leading-[28.8px]">
-          Working on something cool? Say hi. —{" "}
+          Working on something cool? Say hi via{" "}
           <a
             href="https://linkedin.com/in/amanhsn"
             target="_blank"

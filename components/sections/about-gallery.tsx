@@ -17,9 +17,9 @@ const GalleryDialog = lazy(() =>
 );
 
 /**
- * AboutGallery — scroll-driven 3D parallax 5-column masonry.
+ * AboutGallery - scroll-driven 3D parallax 5-column masonry.
  * - Five columns at md+, 3 at sm, 2 on mobile
- * - Cards sit flat (no shadow / no card border) — flush masonry feel
+ * - Cards sit flat (no shadow / no card border) - flush masonry feel
  * - Each card carries data-cursor-text → CursorFollow shows the caption
  * - Click opens the GSAP circular-clip carousel at that image
  */
@@ -50,28 +50,28 @@ export function AboutGallery() {
       <ContainerScroll className="relative h-[300vh] w-full">
         <ContainerSticky className="flex h-svh w-full items-center justify-center px-4 sm:px-8 lg:px-[80px]">
           <GalleryContainer className="mx-auto h-[min(78vh,720px)] w-full max-w-[1200px] gap-2 sm:gap-3">
-            {/* Col 1 — slight downward parallax */}
+            {/* Col 1 - slight downward parallax */}
             <GalleryCol yRange={["-6%", "0%"]} className="-mt-1">
               {cols[0].map((img) => (
                 <GalleryCard key={img.src} img={img} onClick={onCardClick} />
               ))}
             </GalleryCol>
 
-            {/* Col 2 — counter parallax, slight upward offset start */}
+            {/* Col 2 - counter parallax, slight upward offset start */}
             <GalleryCol yRange={["8%", "1%"]} className="mt-[-8%]">
               {cols[1].map((img) => (
                 <GalleryCard key={img.src} img={img} onClick={onCardClick} />
               ))}
             </GalleryCol>
 
-            {/* Col 3 — center, mild parallax */}
+            {/* Col 3 - center, mild parallax */}
             <GalleryCol yRange={["-4%", "0%"]} className="-mt-1">
               {cols[2].map((img) => (
                 <GalleryCard key={img.src} img={img} onClick={onCardClick} />
               ))}
             </GalleryCol>
 
-            {/* Col 4 — counter parallax (mirrors col 2) */}
+            {/* Col 4 - counter parallax (mirrors col 2) */}
             <GalleryCol
               yRange={["8%", "1%"]}
               className="mt-[-8%] hidden sm:flex"
@@ -81,7 +81,7 @@ export function AboutGallery() {
               ))}
             </GalleryCol>
 
-            {/* Col 5 — mirrors col 1 */}
+            {/* Col 5 - mirrors col 1 */}
             <GalleryCol
               yRange={["-6%", "0%"]}
               className="-mt-1 hidden md:flex"

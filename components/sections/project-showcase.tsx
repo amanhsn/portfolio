@@ -1,12 +1,13 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "motion/react";
 import { ProjectMeta } from "./project-meta";
 import type { Project } from "@/content/projects";
 
 /**
- * ProjectShowcase — Figma 84:7373.
+ * ProjectShowcase - Figma 84:7373.
  * Desktop: side-by-side w gap-[44px]; meta 397, media 839×597.
  * Mobile: stacks vertically; meta full-width, media full-width aspect-[16/10].
  */
@@ -46,7 +47,15 @@ export function ProjectShowcase({ project }: { project: Project }) {
         }`}
       >
         <ProjectMeta project={project} />
-        {project.href ? (
+        {project.caseStudySlug ? (
+          <Link
+            href={`/work/${project.caseStudySlug}`}
+            data-cursor-text="View case study"
+            className="block w-full md:w-auto"
+          >
+            {media}
+          </Link>
+        ) : project.href ? (
           <a
             href={project.href}
             target="_blank"

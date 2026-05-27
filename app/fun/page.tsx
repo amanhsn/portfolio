@@ -4,11 +4,11 @@ import { AsteriskDecoration } from "@/components/site/asterisk-decoration";
 import { MixtapesGrid } from "@/components/sections/mixtapes-grid";
 import { getMixtapes } from "@/lib/spotify";
 
-// Revalidate hourly — keeps mixtapes fresh without hammering the Spotify API
+// Revalidate hourly - keeps mixtapes fresh without hammering the Spotify API
 export const revalidate = 3600;
 
 export const metadata = {
-  title: "Fun — Aman's Portfolio",
+  title: "Fun · Aman's Portfolio",
   description: "Mixtapes, playlists, and what I've been listening to.",
 };
 

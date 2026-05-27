@@ -13,7 +13,7 @@ interface GalleryCarouselProps {
 }
 
 /**
- * GalleryCarousel — circular-clip image carousel (GSAP MotionPath).
+ * GalleryCarousel - circular-clip image carousel (GSAP MotionPath).
  *
  * Layout: image frame on top, dot/thumb controller in its own HTML row below
  * the frame (no overlap). Prev/Next chevrons flank the frame.
@@ -67,7 +67,7 @@ export function GalleryCarousel({ startIndex = 0 }: GalleryCarouselProps) {
           </div>
         ))}
 
-        {/* Active image title — top centre */}
+        {/* Active image title - top centre */}
         <div className="pointer-events-none absolute inset-x-0 top-3 z-[101] flex justify-center">
           <span
             className="rounded-full border border-[var(--border-default)] bg-[var(--bg)]/85 px-3 py-1.5 text-fg backdrop-blur"
@@ -85,7 +85,7 @@ export function GalleryCarousel({ startIndex = 0 }: GalleryCarouselProps) {
         </div>
       </div>
 
-      {/* PREV / NEXT — flanking the image */}
+      {/* PREV / NEXT - flanking the image */}
       <button
         type="button"
         aria-label="Previous image"

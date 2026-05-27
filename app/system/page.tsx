@@ -44,7 +44,7 @@ export default function SystemPage() {
           <Eyebrow>design system</Eyebrow>
           <h1 className="t-h2">Tokens, primitives, and motion</h1>
           <p className="t-body text-fg-muted max-w-prose">
-            Visual review surface. Toggle theme via the button below — every
+            Visual review surface. Toggle theme via the button below - every
             token, primitive, and the global custom cursor should flip in
             place. Hover any element with a label to see the cursor pill.
           </p>

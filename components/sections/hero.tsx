@@ -7,7 +7,7 @@ import { experience } from "@/content/experience";
 import { socials } from "@/content/socials";
 
 /**
- * Hero — Figma 84:7270.
+ * Hero - Figma 84:7270.
  * Desktop spec is preserved; mobile collapses the fixed widths to fluid.
  */
 
@@ -46,7 +46,7 @@ export function Hero() {
             </h1>
           </div>
 
-          {/* Role line — stacks on mobile, inline at sm+ */}
+          {/* Role line - stacks on mobile, inline at sm+ */}
           <div className="flex w-full items-center overflow-clip">
             <div className="flex flex-col items-start gap-y-0.5 sm:flex-row sm:items-center sm:gap-x-[8px]">
               <span className="t-hero-role whitespace-nowrap text-[15px] leading-[24px] sm:text-[18px] sm:leading-[28.8px]">
@@ -95,7 +95,7 @@ export function Hero() {
               <span className="t-exp-company row-start-1 truncate text-[14px] sm:text-[15px]">
                 {row.company}
               </span>
-              {/* Role — pushed to next row on mobile */}
+              {/* Role - pushed to next row on mobile */}
               <span className="t-exp-role col-start-2 row-start-2 truncate text-[13px] sm:col-start-3 sm:row-start-1 sm:text-[15px]">
                 {row.role}
               </span>

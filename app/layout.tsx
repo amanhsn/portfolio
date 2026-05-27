@@ -62,7 +62,7 @@ export default function RootLayout({
       className={`${inter.variable} ${geist.variable} ${geistMono.variable} ${jetbrains.variable} ${dmMono.variable}`}
     >
       <head>
-        {/* Satoshi — Fontshare CDN, 400/500/700 */}
+        {/* Satoshi - Fontshare CDN, 400/500/700 */}
         <link
           rel="preconnect"
           href="https://api.fontshare.com"

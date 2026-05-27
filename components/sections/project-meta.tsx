@@ -1,7 +1,7 @@
 import type { Project } from "@/content/projects";
 
 /**
- * ProjectMeta — Figma 84:7375 (Margin column).
+ * ProjectMeta - Figma 84:7375 (Margin column).
  * Desktop: w-[397px] h-[597px] pr-[18px].
  * Mobile: w-full, no height clamp, no right padding.
  */

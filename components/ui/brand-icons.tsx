@@ -1,5 +1,5 @@
 /**
- * Brand icon set — Behance, Spotify, CV.
+ * Brand icon set - Behance, Spotify, CV.
  *
  * Behance + Spotify use their official SimpleIcons paths (filled with
  * `currentColor`) so they read as proper brand marks alongside lucide-react.
@@ -45,7 +45,7 @@ export function SpotifyIcon({ size = 18, className }: IconProps) {
 }
 
 /**
- * CV / Resume — line icon (matches lucide stroke-style for visual harmony).
+ * CV / Resume - line icon (matches lucide stroke-style for visual harmony).
  * A document with a small person silhouette inside.
  */
 export function CvIcon({ size = 18, strokeWidth = 1.5, className }: IconProps) {

@@ -8,7 +8,7 @@ const MIN_DURATION_MS = 1200; // ensures the moment registers even on fast loads
 const SESSION_KEY = "amanhsn:loader-shown";
 
 /**
- * First-load Loader — covers the page with a rotating asterisk + eyebrow.
+ * First-load Loader - covers the page with a rotating asterisk + eyebrow.
  * Session-scoped so it only shows once per browser session, not on every
  * client-side navigation (the portfolio is single-page anyway).
  *
@@ -16,7 +16,7 @@ const SESSION_KEY = "amanhsn:loader-shown";
  * a soft opacity pulse runs.
  */
 export function Loader() {
-  // Hidden until we know if we should show — avoids a flash for repeat visitors
+  // Hidden until we know if we should show - avoids a flash for repeat visitors
   const [visible, setVisible] = useState<boolean | null>(null);
   const [reduceMotion, setReduceMotion] = useState(false);
 
@@ -76,7 +76,7 @@ export function Loader() {
           aria-live="polite"
           aria-busy="true"
         >
-          {/* Rotating asterisk — large logo, continuous slow spin */}
+          {/* Rotating asterisk - large logo, continuous slow spin */}
           <motion.div
             initial={{ scale: 0.92, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
@@ -96,7 +96,7 @@ export function Loader() {
             </motion.div>
           </motion.div>
 
-          {/* Eyebrow text — softer pulse */}
+          {/* Eyebrow text - softer pulse */}
           <motion.div
             initial={{ opacity: 0, y: 6 }}
             animate={{ opacity: 1, y: 0 }}

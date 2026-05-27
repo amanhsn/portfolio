@@ -5,7 +5,7 @@ import { AsteriskLogo } from "@/components/ui/asterisk-logo";
 import { cn } from "@/lib/cn";
 
 /**
- * Inline asterisk spinner — for any loading state that's not the full-page
+ * Inline asterisk spinner - for any loading state that's not the full-page
  * Loader. Slow rotation, current text color.
  */
 export function Spinner({

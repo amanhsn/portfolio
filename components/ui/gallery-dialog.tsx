@@ -44,7 +44,7 @@ export function GalleryDialog({
                 className="fixed left-1/2 top-1/2 z-[151] flex h-[90vh] w-[90vw] max-w-[800px] -translate-x-1/2 -translate-y-1/2 items-center justify-center focus:outline-none"
               >
                 <Dialog.Title className="sr-only">
-                  Gallery — fullscreen
+                  Gallery - fullscreen
                 </Dialog.Title>
                 <Dialog.Description className="sr-only">
                   Browse images. Use left and right buttons to navigate, press

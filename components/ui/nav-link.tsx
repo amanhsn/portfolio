@@ -13,7 +13,7 @@ export interface NavLinkProps {
 }
 
 /**
- * NavLink — colour-driven hover, no opacity dim.
+ * NavLink - colour-driven hover, no opacity dim.
  * Default:           text-fg-muted
  * group-hover (other items): text-fg-subtle (one step muted, subtle)
  * hover:             text-fg + bordered pill background
@@ -59,7 +59,7 @@ export function NavLink({
     "text-fg-muted group-hover/nav:text-fg-subtle",
     // The item that's hovered itself
     "hover:!text-fg hover:!border-[var(--border-default)] hover:!bg-[var(--pill-bg-active)]",
-    // Active route — same treatment as hovered
+    // Active route - same treatment as hovered
     active &&
       "!text-fg !border-[var(--border-default)] !bg-[var(--pill-bg-active)]",
   );

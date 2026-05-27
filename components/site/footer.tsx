@@ -1,5 +1,5 @@
 /**
- * Footer — Figma 84:7770.
+ * Footer - Figma 84:7770.
  * Desktop: copyright + link row inline. Mobile: stack vertically with smaller gap.
  */
 const LINKS = [
@@ -16,7 +16,7 @@ export function Footer() {
   return (
     <footer className="relative w-full">
       <div className="mx-auto flex w-full max-w-[1441px] flex-col items-start gap-6 border-t border-[var(--border-subtle)] px-5 py-10 sm:px-8 md:flex-row md:items-end md:justify-between md:gap-6 md:px-[80px] md:py-[64px] lg:px-[104.5px]">
-        {/* Left — copy */}
+        {/* Left - copy */}
         <p className="t-footer-body">
           Designed &amp; Developed with <span aria-hidden>❤️</span> by{" "}
           <a
@@ -30,7 +30,7 @@ export function Footer() {
           </a>
         </p>
 
-        {/* Right — uppercase mono links */}
+        {/* Right - uppercase mono links */}
         <nav className="flex flex-wrap items-center gap-x-6 gap-y-2 md:gap-x-[32px]">
           {LINKS.map((l) => (
             <a
