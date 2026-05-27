@@ -52,34 +52,6 @@ export const projects: Project[] = [
     },
   },
   {
-    slug: "imagineart-edit-mode",
-    name: "ImagineArt Edit Mode",
-    paragraphs: [
-      "Edit Mode brings inline, brush-driven generative editing right into the canvas. No leaving the project, no popovers, no detours.",
-      "Shipped as the default editing surface for ImagineArt creators; reduced average edit-to-export time by 38% in the first month of public release.",
-    ],
-    rows: [
-      { label: "Year", value: "2026" },
-      { label: "Role", value: "Lead Product Designer" },
-      {
-        label: "Scope",
-        value: "Product Strategy, UX Design, Interaction, Prototyping",
-      },
-      { label: "Device", value: "Web Design" },
-      {
-        label: "Tools",
-        value: "Figma, Mixpanel, ImagineArt, Claude AI, Figma MCP",
-      },
-      { label: "Link", value: "imagine.art/edit" },
-    ],
-    href: "https://imagine.art/edit",
-    side: "right",
-    media: {
-      src: "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?auto=format&fit=crop&w=1600&q=80",
-      alt: "ImagineArt Edit Mode preview",
-    },
-  },
-  {
     slug: "imagineart-upscale",
     name: "ImagineArt Upscale",
     paragraphs: [
@@ -102,12 +74,41 @@ export const projects: Project[] = [
     ],
     href: "https://imagine.art/upscale?modelListId=75",
     caseStudySlug: "upscale",
-    side: "left",
+    side: "right",
     media: {
       src: "/case-studies/upscale/cover.jpg",
       alt: "ImagineArt Upscale workspace with a before and after compare",
     },
     coverStat: "850K+ upscales · 107K in the peak month",
+  },
+  {
+    slug: "imagineart-assist",
+    name: "ImagineArt Assist",
+    paragraphs: [
+      "Assist is ImagineArt's conversational front door. Instead of picking a tool, you describe what you want and Assist reads the intent, picks the model, generates inline, then suggests the next step.",
+      "Launched January 2026 to six figures of monthly users. Roughly 700K Assist interactions in the first five months, peaking near 192K in February.",
+    ],
+    rows: [
+      { label: "Year", value: "2026" },
+      { label: "Role", value: "Product Designer + Manager" },
+      {
+        label: "Scope",
+        value: "Product Strategy, UX/UI Design, Prototyping",
+      },
+      { label: "Device", value: "Web Design" },
+      {
+        label: "Tools",
+        value: "Figma, Mixpanel, ImagineArt, Chatly",
+      },
+      { label: "Link", value: "imagine.art/image" },
+    ],
+    href: "https://www.imagine.art/image",
+    caseStudySlug: "assist",
+    side: "left",
+    media: {
+      src: "/case-studies/assist/cover.jpg",
+      alt: "ImagineArt Assist conversation generating a Snoopy and Woodstock illustration with suggested next steps",
+    },
   },
   {
     slug: "power-zone",
@@ -117,7 +118,7 @@ export const projects: Project[] = [
       "Designed in Figma and built in Framer end to end. An application-first site organized by industry, with every path resolving to one Contact Sales conversation.",
     ],
     rows: [
-      { label: "Year", value: "2024" },
+      { label: "Year", value: "2025" },
       { label: "Role", value: "Design, Framer build, brand & content" },
       {
         label: "Scope",
@@ -132,38 +133,68 @@ export const projects: Project[] = [
     ],
     href: "https://powerzone.com.pk",
     caseStudySlug: "power-zone",
-    side: "left",
+    side: "right",
     media: {
       src: "/case-studies/power-zone/hero.png",
       alt: "Power Zone diesel generator hero",
     },
   },
   {
-    slug: "imagineart-references",
-    name: "ImagineArt References",
+    slug: "clinio",
+    name: "Clinio",
     paragraphs: [
-      "References lets creators attach inspiration, like characters, styles and palettes, directly to a prompt, so the model stays loyal to the look they want.",
-      "Designed the reference manager, drag-and-drop pipeline, and weighting controls. Shipped to all paid creators; reference attach rate hit 71% in week one.",
+      "Clinio is a European telemedicine MVP that connects patients to medical practitioners on one web app. Book a doctor, hold a video or in-person consult, and manage records, all built accessibility first.",
+      "Designed end to end in 8 weeks for a Belgian client: brand, UX research, a two-role product and a prototype, on a blockchain backend. Handed off as a reusable Figma system for a React build.",
     ],
     rows: [
       { label: "Year", value: "2025" },
-      { label: "Role", value: "Product Designer" },
+      { label: "Role", value: "Lead Product Designer" },
       {
         label: "Scope",
-        value: "Product Strategy, UX Design, Interaction, Prototyping",
+        value: "Brand, UX Research, UI/UX Design, Prototyping",
       },
-      { label: "Device", value: "Web Design" },
+      { label: "Device", value: "Web App (patient & practitioner)" },
       {
         label: "Tools",
-        value: "Figma, Mixpanel, ImagineArt, Claude AI",
+        value: "Figma, Canva",
       },
-      { label: "Link", value: "imagine.art/references" },
+      { label: "Link", value: "behance.com/amanhsn" },
     ],
-    href: "https://imagine.art/references",
+    href: "https://www.behance.net/gallery/217896347/Clinio-Case-Study",
+    caseStudySlug: "clinio",
+    side: "left",
+    media: {
+      src: "/case-studies/clinio/cover.jpg",
+      alt: "Clinio telemedicine dashboards for patient and practitioner",
+    },
+  },
+  {
+    slug: "share-ease",
+    name: "Share Ease",
+    paragraphs: [
+      "Share Ease is a bill-splitting app concept that ends the awkward money text, not just the math. Create a group, log what everyone spent, split it, and settle up in app.",
+      "Designed end to end in a month: brand, UX, UI, prototype and a marketing site. It closes the loop with a group virtual card and in-app payment requests, then was handed to a React Native build.",
+    ],
+    rows: [
+      { label: "Year", value: "2024" },
+      { label: "Role", value: "Product Designer, solo" },
+      {
+        label: "Scope",
+        value: "Branding, UX/UI Design, Prototyping, Web",
+      },
+      { label: "Device", value: "Mobile App (iOS & Android)" },
+      {
+        label: "Tools",
+        value: "Figma, Whimsical, Canva",
+      },
+      { label: "Link", value: "behance.com/amanhsn" },
+    ],
+    href: "https://www.behance.net/gallery/202794443/Product-Case-Study-Share-Ease",
+    caseStudySlug: "share-ease",
     side: "right",
     media: {
-      src: "https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?auto=format&fit=crop&w=1600&q=80",
-      alt: "ImagineArt References creative inspiration board",
+      src: "/case-studies/share-ease/cover.jpg",
+      alt: "Share Ease bill-splitting app screens",
     },
   },
 ];

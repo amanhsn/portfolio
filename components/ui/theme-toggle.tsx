@@ -11,8 +11,8 @@ import { cn } from "@/lib/cn";
  * driven by next-themes, wrapped in the existing circular view-transition reveal.
  *
  * Icon: sun rays retract + rotate away, the centre circle swells into a moon
- * body, and a mask carves the crescent - all on spring physics. An optional
- * soft switch-click sounds on toggle (off by default; pass `sound`).
+ * body, and a mask carves the crescent - all on spring physics. A soft
+ * switch-click sounds on toggle (on by default; pass `sound={false}` to mute).
  *
  * The next-themes wiring (data-theme attribute, persistence, SSR-safe mount)
  * and the page-wide clip-path reveal are kept intact, and the button keeps the
@@ -73,7 +73,7 @@ function tick(last: { current: number }) {
 
 export function ThemeToggle({
   className,
-  sound = false,
+  sound = true,
 }: {
   className?: string;
   sound?: boolean;
@@ -170,14 +170,16 @@ export function ThemeToggle({
           transition={spring}
           style={{ overflow: "visible" }}
         >
-          {/* Mask carves the crescent from the centre circle */}
+          {/* Mask carves the crescent from the centre circle. The carve circle is
+              smaller than the body and offset up-right, so the moon reads as a
+              full, rounded crescent instead of a thin sliver. */}
           <mask id={maskId}>
             <rect x="0" y="0" width="100%" height="100%" fill="white" />
             <motion.circle
               initial={false}
-              animate={{ cx: isDark ? 17 : 33, cy: isDark ? 8 : 0 }}
+              animate={{ cx: isDark ? 15.5 : 33, cy: isDark ? 7 : 0 }}
               transition={spring}
-              r="9"
+              r="7.5"
               fill="black"
             />
           </mask>

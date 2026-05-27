@@ -15,25 +15,20 @@ const fadeUp = {
   animate: { opacity: 1, y: 0 },
 };
 
-const COFFEE_IMG =
-  "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=320&q=80";
+const COFFEE_IMG = "/gallery/coffeemaxxing.jpg";
 
 const BULLETS: Array<{ label: string; image: string }> = [
   {
     label: "touching grass",
-    image:
-      "https://images.unsplash.com/photo-1495107334309-fcf20504a5ab?auto=format&fit=crop&w=320&q=80",
+    image: "/gallery/himalayas.jpg",
   },
   {
     label: "curating mixtapes",
-    image:
-      "https://images.unsplash.com/photo-1481277542470-605612bd2d61?auto=format&fit=crop&w=320&q=80",
+    image: "/gallery/guitar%20sesh.jpg",
   },
-  // typo "listeing" retained verbatim per Figma, intentional playful touch
   {
-    label: "listening, listeing & listening, to music.",
-    image:
-      "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=320&q=80",
+    label: "listening, listening & listening to music.",
+    image: "/about/listening%20to%20music.jpg",
   },
 ];
 
@@ -67,7 +62,7 @@ export function About() {
           <p className="t-hero-body text-[15px] leading-[24px] sm:text-[20px] sm:leading-normal">
             I think deeply about people, products, and where technology is
             headed. Right now that mostly means playing at the edges of genAI
-            at ImagineArt, it&rsquo;s where the interesting questions live.
+            at ImagineArt. That&rsquo;s where the interesting questions live.
           </p>
           <p className="t-hero-body text-[15px] leading-[24px] sm:text-[20px] sm:leading-normal">
             CS student by day, designer-engineer by nature. When I&rsquo;m not
@@ -127,16 +122,6 @@ export function About() {
             className="underline decoration-[var(--text-tertiary)] underline-offset-4 transition-colors duration-200 hover:text-fg-muted"
           >
             LinkedIn
-          </a>{" "}
-          ·{" "}
-          <a
-            href="https://twitter.com/amanhsn"
-            target="_blank"
-            rel="noopener noreferrer"
-            data-cursor-text="X"
-            className="underline decoration-[var(--text-tertiary)] underline-offset-4 transition-colors duration-200 hover:text-fg-muted"
-          >
-            X
           </a>{" "}
           ·{" "}
           <a

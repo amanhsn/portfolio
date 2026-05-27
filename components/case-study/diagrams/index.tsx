@@ -189,7 +189,7 @@ function UpscaleGrowth() {
       </div>
       <div className="mt-4 flex h-[160px] items-end gap-[3px]">
         {data.map(([m, v], i) => (
-          <div key={i} className="group relative flex flex-1 flex-col items-center justify-end">
+          <div key={i} className="group relative flex h-full flex-1 flex-col justify-end">
             <div
               className="w-full rounded-t-[2px] bg-[var(--accent)] transition-opacity"
               style={{ height: `${Math.max((v / max) * 100, 1.5)}%` }}
@@ -207,6 +207,91 @@ function UpscaleGrowth() {
   );
 }
 
+/**
+ * Assist decision 01 - one plain-language prompt, classified into the right
+ * task, then handed the logical next step. Mirrors the live "Considering
+ * Image Generation" / "Determining Aspect Ratio" intent badges.
+ */
+function AssistIntent() {
+  const routes = ["Generate image", "Generate video", "Answer + advise"];
+  const next = ["Variation", "Upscale", "Animate"];
+  return (
+    <div className={`${card} flex flex-col gap-3 p-5`}>
+      <div className="rounded-[var(--radius-sm)] border border-dashed border-[var(--border)] p-3 text-[14px] text-fg-muted">
+        &ldquo;A cat in a tiny yellow raincoat, studio photo&rdquo;
+      </div>
+      <div className="flex items-center gap-2 text-fg-subtle">
+        <svg width="24" height="20" viewBox="0 0 24 20" fill="none" aria-hidden>
+          <path d="M12 2v14m0 0-5-5m5 5 5-5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+        <span className="text-[13px]">Assist reads the intent, picks the task and the model</span>
+      </div>
+      <div className="flex flex-wrap gap-2">
+        {routes.map((r, i) => (
+          <span
+            key={r}
+            className={
+              i === 0
+                ? "rounded-[var(--radius-pill)] border border-[var(--accent)] px-3 py-1 text-[13px] text-[var(--accent)]"
+                : chip
+            }
+          >
+            {r}
+          </span>
+        ))}
+      </div>
+      <div className="flex flex-wrap items-center gap-2 border-t border-[var(--border)] pt-3">
+        <span className="t-mono-xs text-fg-subtle">then offers the next step</span>
+        {next.map((n) => (
+          <Tag key={n}>{n}</Tag>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+/**
+ * Assist monthly volume, real Mixpanel data ("One Chat - Agent" event,
+ * Imagine Web - Prod). Launch Jan 2026, peak Feb, then a steady plateau.
+ * May is a partial month (through the 27th).
+ */
+function AssistGrowth() {
+  const data: Array<[string, number]> = [
+    ["Jan", 86377], ["Feb", 191796], ["Mar", 152006], ["Apr", 172617], ["May", 96742],
+  ];
+  const max = 191796;
+  return (
+    <div className={`${card} p-5`}>
+      <div className="flex items-baseline justify-between">
+        <span className="t-mono-xs text-fg-subtle">Assist interactions per month</span>
+        <span className="t-mono-xs text-fg-subtle">2026</span>
+      </div>
+      <div className="mt-4 flex h-[160px] items-end gap-3">
+        {data.map(([, v], i) => (
+          <div key={i} className="flex h-full flex-1 flex-col justify-end">
+            <div
+              className="w-full rounded-t-[2px] bg-[var(--accent)]"
+              style={{ height: `${Math.max((v / max) * 100, 1.5)}%` }}
+              title={`${v.toLocaleString()} interactions`}
+            />
+          </div>
+        ))}
+      </div>
+      <div className="mt-2 flex gap-3">
+        {data.map(([m, v], i) => (
+          <div key={i} className="flex flex-1 flex-col items-center gap-0.5">
+            <span className="t-mono-xs text-fg">{(v / 1000).toFixed(0)}K</span>
+            <span className="text-[11px] text-fg-subtle">{m}</span>
+          </div>
+        ))}
+      </div>
+      <p className="mt-3 text-[13px] text-fg-subtle">
+        Launched January, peaked at ~192K in February, then held a six-figure plateau. May is partial (through the 27th).
+      </p>
+    </div>
+  );
+}
+
 const REGISTRY: Record<string, () => React.ReactElement> = {
   "upscale-growth": UpscaleGrowth,
   "prompt-vs-panel": PromptVsPanel,
@@ -214,6 +299,8 @@ const REGISTRY: Record<string, () => React.ReactElement> = {
   "model-agnostic": ModelAgnostic,
   "control-anatomy": ControlAnatomy,
   "applications-ia": ApplicationsIa,
+  "assist-intent": AssistIntent,
+  "assist-growth": AssistGrowth,
 };
 
 export function Diagram({ name }: { name?: string }) {

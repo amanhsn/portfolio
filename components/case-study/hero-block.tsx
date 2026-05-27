@@ -46,7 +46,7 @@ export function HeroBlock({ hero }: { hero: Hero }) {
             </p>
             <div className="flex flex-wrap gap-x-10 gap-y-4">
               {hero.meta.map((m) => (
-                <div key={m.label} className="flex max-w-[200px] flex-col gap-0.5">
+                <div key={m.label} className="flex flex-col gap-0.5">
                   <span className="font-[family-name:var(--font-geist)] text-[15px] text-[var(--text-company)]">
                     {m.label}
                   </span>
@@ -82,16 +82,40 @@ export function HeroBlock({ hero }: { hero: Hero }) {
   );
 }
 
-/** Hero product shot - immediately below the hero block. */
+/** Hero product shot - immediately below the hero block. A video takes precedence over a still. */
 export function ProductShot({
   src,
   alt,
   aspect = "2620 / 1866",
+  video,
 }: {
   src?: string;
   alt: string;
   aspect?: string;
+  video?: string;
 }) {
+  if (video) {
+    // Same framed treatment as ImageFrame (node 57:22227), but a looping clip.
+    return (
+      <Container className="mt-10">
+        <div
+          className="relative w-full overflow-hidden rounded-[var(--radius-lg)] border border-[var(--border-default)]"
+          style={{ aspectRatio: aspect, boxShadow: "var(--shadow-card)" }}
+        >
+          <video
+            className="absolute inset-0 h-full w-full object-cover"
+            src={video}
+            poster={src}
+            autoPlay
+            loop
+            muted
+            playsInline
+            aria-label={alt}
+          />
+        </div>
+      </Container>
+    );
+  }
   return (
     <Container className="mt-10">
       <ImageFrame src={src} alt={alt} aspect={aspect} sizes="(max-width: 768px) 100vw, 1280px" priority />

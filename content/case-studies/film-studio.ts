@@ -25,10 +25,10 @@ export const filmStudio: CaseStudy = {
       { label: "Scope", value: "Product strategy, UI/UX, prototyping, branding, GenAI" },
     ],
     stats: [
-      { label: "ImagineArt Users", value: "30M+", caption: "100M+ downloads" },
-      { label: "Portfolio Reach", value: "150M+", caption: "50M+ projects created" },
-      { label: "Revenue", value: "8M+", caption: "25M+ active users" },
-      { label: "AA Image Arena", value: "#6", caption: "80M+ designs shared" },
+      { label: "Launch reach", value: "2.7M", caption: "views on X, May 2026" },
+      { label: "Refined across", value: "100s", caption: "of original productions" },
+      { label: "Output types", value: "5", caption: "one project, one canvas" },
+      { label: "Production controls", value: "6", caption: "the director's chair" },
     ],
     productShot: {
       src: "/case-studies/film-studio/hero.jpg",

@@ -239,8 +239,8 @@ export const upscale: CaseStudy = {
     nav: {
       next: {
         label: "Next case study",
-        title: "ImagineArt Film Studio",
-        href: "/work/film-studio",
+        title: "ImagineArt Assist",
+        href: "/work/assist",
       },
       all: { label: "All work", title: "Back to work", href: "/" },
     },

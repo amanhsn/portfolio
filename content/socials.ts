@@ -12,7 +12,7 @@ export const socials: Social[] = [
   },
   {
     label: "Behance",
-    href: "https://behance.net/amanhsn",
+    href: "https://behance.com/amanhsn",
     icon: "behance",
   },
   {

@@ -61,6 +61,7 @@
   --text-body: #121212;        /* hero bio */
   --text-company: #32404f;     /* experience company */
   --text-accent-red: #ff0004;  /* "AVID" word in About headline */
+  --text-accent-green: #0a9d4a; /* "SLOP" word in Playground headline */
 
   /* Borders — 3 weights */
   --border-subtle: rgba(50, 64, 79, 0.15);   /* horizontal border under socials */
@@ -112,7 +113,8 @@
   --text-name: #f4f4f6;
   --text-body: #ededed;
   --text-company: #e2e6eb;
-  --text-accent-red: #ff5a5e;  /* AVID — softened for dark mode */
+  --text-accent-red: #ff5a5e;  /* AVID softened for dark mode */
+  --text-accent-green: #4ade80; /* SLOP brightened for dark mode */
 
   /* Borders — 3 weights */
   --border-subtle: rgba(255, 255, 255, 0.08);

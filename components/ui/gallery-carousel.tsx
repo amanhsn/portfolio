@@ -142,12 +142,14 @@ function ClippedImage({
   const bigSize = circleRadius * scale;
   const overlap = 0;
 
+  // Rest position sits below the frame so inactive images stay hidden (no dot
+  // strip). Images still fly up from here on open; chevrons drive navigation.
   const getPosSmall = () => ({
     cx:
       width / 2 -
       (total * (circleRadius * 2 + gap) - gap) / 2 +
       id * (circleRadius * 2 + gap),
-    cy: height - 30,
+    cy: height + 60,
     r: circleRadius,
   });
   const getPosSmallAbove = () => ({
@@ -229,7 +231,6 @@ function ClippedImage({
       viewBox={`0 0 ${width} ${height}`}
       preserveAspectRatio="xMidYMid slice"
       className="h-full w-full"
-      data-cursor-text={image.title}
     >
       <defs>
         <clipPath id={`${id}_circleClip`}>

@@ -3,7 +3,7 @@
  * Desktop: copyright + link row inline. Mobile: stack vertically with smaller gap.
  */
 const LINKS = [
-  { label: "BEHANCE", href: "https://behance.net/amanhsn" },
+  { label: "BEHANCE", href: "https://behance.com/amanhsn" },
   { label: "LINKEDIN", href: "https://linkedin.com/in/amanhsn" },
   { label: "CV", href: "https://aman-resume.vercel.app" },
   {
@@ -19,15 +19,7 @@ export function Footer() {
         {/* Left - copy */}
         <p className="t-footer-body">
           Designed &amp; Developed with <span aria-hidden>❤️</span> by{" "}
-          <a
-            href="https://twitter.com/amanhsn"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="underline decoration-[var(--text-tertiary)] underline-offset-2"
-            data-cursor-text="Twitter"
-          >
-            @amanhsn
-          </a>
+          <span>@amanhsn</span>
         </p>
 
         {/* Right - uppercase mono links */}

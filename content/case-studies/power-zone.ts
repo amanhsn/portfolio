@@ -261,8 +261,8 @@ export const powerZone: CaseStudy = {
     nav: {
       next: {
         label: "Next case study",
-        title: "ImagineArt Upscale",
-        href: "/work/upscale",
+        title: "Share Ease",
+        href: "/work/share-ease",
       },
       all: { label: "All work", title: "Back to work", href: "/" },
     },

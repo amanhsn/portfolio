@@ -43,6 +43,7 @@ export default async function CaseStudyPage({ params }: Params) {
           src={cs.hero.productShot.src}
           alt={cs.hero.productShot.alt}
           aspect={cs.hero.productShot.aspect}
+          video={cs.hero.productShot.video}
         />
 
         <FadeIn><ContextBlock context={cs.context} /></FadeIn>

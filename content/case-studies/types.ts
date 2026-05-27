@@ -19,8 +19,12 @@ export type Stat = {
 
 export type MetaItem = { label: string; value: string };
 
-/** `src` omitted → a branded placeholder frame renders until the asset lands. */
-export type HeroImage = { src?: string; alt: string; aspect?: string };
+/**
+ * `src` omitted → a branded placeholder frame renders until the asset lands.
+ * `video` set → an autoplaying, looping, muted clip renders in the frame, with
+ * `src` (if present) used as its poster.
+ */
+export type HeroImage = { src?: string; alt: string; aspect?: string; video?: string };
 
 export type Hero = {
   /** ALL-CAPS title (rendered uppercase). */

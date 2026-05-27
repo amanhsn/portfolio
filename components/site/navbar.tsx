@@ -18,7 +18,7 @@ const NAV_ITEMS: Array<{
 }> = [
   { label: "Work", href: "/", matchPath: "/" },
   { label: "About", href: "/about", matchPath: "/about" },
-  { label: "Fun", href: "/fun", matchPath: "/fun" },
+  { label: "Playground", href: "/playground", matchPath: "/playground" },
   {
     label: "Resume",
     href: "https://aman-resume.vercel.app",
