@@ -83,10 +83,18 @@ export function HeroBlock({ hero }: { hero: Hero }) {
 }
 
 /** Hero product shot - immediately below the hero block. */
-export function ProductShot({ src, alt }: { src?: string; alt: string }) {
+export function ProductShot({
+  src,
+  alt,
+  aspect = "2620 / 1866",
+}: {
+  src?: string;
+  alt: string;
+  aspect?: string;
+}) {
   return (
     <Container className="mt-10">
-      <ImageFrame src={src} alt={alt} aspect="2620 / 1866" sizes="(max-width: 768px) 100vw, 1280px" priority />
+      <ImageFrame src={src} alt={alt} aspect={aspect} sizes="(max-width: 768px) 100vw, 1280px" priority />
     </Container>
   );
 }

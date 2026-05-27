@@ -31,8 +31,8 @@ const typeScale: { cls: string; label: string; sample: string }[] = [
   { cls: "t-subhead", label: "Subhead · Satoshi Bold 18/28.8 · -0.2", sample: "Section subhead" },
   { cls: "t-body", label: "Body · Satoshi Regular 16/25.6", sample: "Body paragraph text in the design system." },
   { cls: "t-meta", label: "Meta · Satoshi Medium 14/20.25", sample: "Meta label" },
-  { cls: "t-eyebrow", label: "Eyebrow · JetBrains Mono Medium 14/14 · 0.47", sample: "EYEBROW · MONO" },
-  { cls: "t-link", label: "Link · JetBrains Mono Medium 14/14", sample: "inline-link" },
+  { cls: "t-eyebrow", label: "Eyebrow · Inter Medium 14/14 · 0.47", sample: "EYEBROW · MONO" },
+  { cls: "t-link", label: "Link · Inter Medium 14/14", sample: "inline-link" },
   { cls: "t-mono-xs", label: "Mono XS · DM Mono Medium 10/12 · 2.8", sample: "NUMERIC TAG" },
 ];
 

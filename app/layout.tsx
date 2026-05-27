@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
-import { Inter, Geist, Geist_Mono, JetBrains_Mono, DM_Mono } from "next/font/google";
+import { Inter, Geist, Geist_Mono, DM_Mono } from "next/font/google";
 import { Providers } from "./providers";
 import { CursorFollow } from "@/components/ui/cursor-follow";
 import { Loader } from "@/components/site/loader";
 import "./globals.css";
 
 // Satoshi → Fontshare CDN (linked in <head>).
-// Inter, Geist, Geist Mono, JetBrains Mono, DM Mono → Google Fonts via next/font.
+// Inter, Geist, Geist Mono, DM Mono → Google Fonts via next/font.
 
 const inter = Inter({
   subsets: ["latin"],
@@ -24,13 +24,6 @@ const geist = Geist({
 const geistMono = Geist_Mono({
   subsets: ["latin"],
   variable: "--font-geist-mono",
-  display: "swap",
-});
-
-const jetbrains = JetBrains_Mono({
-  subsets: ["latin"],
-  weight: ["400", "500"],
-  variable: "--font-jetbrains",
   display: "swap",
 });
 
@@ -59,7 +52,7 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${inter.variable} ${geist.variable} ${geistMono.variable} ${jetbrains.variable} ${dmMono.variable}`}
+      className={`${inter.variable} ${geist.variable} ${geistMono.variable} ${dmMono.variable}`}
     >
       <head>
         {/* Satoshi - Fontshare CDN, 400/500/700 */}

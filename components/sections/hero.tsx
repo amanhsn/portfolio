@@ -1,8 +1,12 @@
 "use client";
 
 import { motion } from "motion/react";
-import { Linkedin } from "lucide-react";
-import { BehanceIcon, CvIcon, SpotifyIcon } from "@/components/ui/brand-icons";
+import {
+  BehanceIcon,
+  CvIcon,
+  LinkedinIcon,
+  SpotifyIcon,
+} from "@/components/ui/brand-icons";
 import { experience } from "@/content/experience";
 import { socials } from "@/content/socials";
 
@@ -17,7 +21,7 @@ const fadeUp = {
 };
 
 const ICONS = {
-  linkedin: Linkedin,
+  linkedin: LinkedinIcon,
   behance: BehanceIcon,
   cv: CvIcon,
   spotify: SpotifyIcon,
@@ -127,7 +131,7 @@ export function Hero() {
                 data-cursor-text={s.label}
                 className="flex h-[32px] w-[32px] items-center justify-center rounded-[var(--radius-sm)] text-fg-muted transition-colors hover:text-fg"
               >
-                <Icon size={18} strokeWidth={1.5} className="" />
+                <Icon size={18} />
               </a>
             );
           })}

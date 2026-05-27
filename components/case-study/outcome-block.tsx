@@ -1,5 +1,6 @@
 import { Container } from "@/components/ui/container";
 import { SectionLabel } from "./section-label";
+import { Diagram } from "./diagrams";
 import type { Outcome } from "@/content/case-studies/types";
 
 /** 07 · OUTCOME - data spread (metric cards + date stamp) or qualitative cards. */
@@ -13,7 +14,7 @@ export function OutcomeBlock({ outcome }: { outcome: Outcome }) {
 
       {outcome.kind === "data" ? (
         <>
-          <p className="mt-3 font-[family-name:var(--font-jetbrains)] text-[13px] uppercase tracking-wide text-fg-subtle">
+          <p className="mt-3 font-[family-name:var(--font-inter)] text-[13px] tracking-wide text-fg-subtle">
             {outcome.dateStamp}
           </p>
           <div className="mt-10 grid gap-8 sm:grid-cols-3">
@@ -25,12 +26,17 @@ export function OutcomeBlock({ outcome }: { outcome: Outcome }) {
               </div>
             ))}
           </div>
+          {outcome.chart && (
+            <div className="mt-8">
+              <Diagram name={outcome.chart} />
+            </div>
+          )}
         </>
       ) : (
         <div className="mt-10 grid gap-8 sm:grid-cols-3">
           {outcome.cards.map((c) => (
             <div key={c.label} className="flex flex-col gap-2 rounded-[var(--radius-md)] border border-[var(--border)] bg-[var(--bg-muted)] p-6">
-              <span className="font-[family-name:var(--font-jetbrains)] text-[12px] uppercase tracking-[0.18em] text-fg-subtle">{c.label}</span>
+              <span className="font-[family-name:var(--font-inter)] text-[12px] uppercase tracking-[0.18em] text-fg-subtle">{c.label}</span>
               <p className="font-[family-name:var(--font-sans)] text-[16px] leading-relaxed text-fg">{c.body}</p>
             </div>
           ))}

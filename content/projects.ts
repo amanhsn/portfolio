@@ -13,9 +13,12 @@ export type Project = {
   caseStudySlug?: string;
   side: "left" | "right";
   media: {
-    src: string;
+    /** Omit to render a branded cover (name + coverStat) instead of a photo. */
+    src?: string;
     alt: string;
   };
+  /** Headline stat shown on the branded cover when there's no media.src. */
+  coverStat?: string;
 };
 
 export const projects: Project[] = [
@@ -44,7 +47,7 @@ export const projects: Project[] = [
     caseStudySlug: "film-studio",
     side: "left",
     media: {
-      src: "/case-studies/film-studio/hero.png",
+      src: "/case-studies/film-studio/hero.jpg",
       alt: "ImagineArt Film Studio workspace",
     },
   },
@@ -77,31 +80,62 @@ export const projects: Project[] = [
     },
   },
   {
-    slug: "power-zone",
-    name: "Power Zone",
+    slug: "imagineart-upscale",
+    name: "ImagineArt Upscale",
     paragraphs: [
-      "Power Zone is Pakistan's largest renewable-energy installer. The site needed to translate decades of field expertise into a clean, conversion-ready surface.",
-      "Built a marketing system spanning hero, service, project and lead-flow pages. Self-served qualification doubled inbound demo requests within 90 days.",
+      "ImagineArt's AI image upscaler: drop an image, pick a model, and get a sharper, higher-resolution result in one step.",
+      "A utility front door that launched to six figures of upscales a month. Roughly 849K upscales run, peaking at 107K in a single month.",
     ],
     rows: [
-      { label: "Year", value: "2024" },
-      { label: "Role", value: "Product Designer" },
+      { label: "Year", value: "2026" },
+      { label: "Role", value: "Lead Product Designer" },
       {
         label: "Scope",
-        value: "Product Strategy, Web Design, Branding, Content Design",
+        value: "Product Strategy, UX/UI Design, Prototyping",
       },
       { label: "Device", value: "Web Design" },
       {
         label: "Tools",
-        value: "Figma, Webflow, Mixpanel",
+        value: "Figma, Mixpanel, ImagineArt",
+      },
+      { label: "Link", value: "imagine.art/upscale" },
+    ],
+    href: "https://imagine.art/upscale?modelListId=75",
+    caseStudySlug: "upscale",
+    side: "left",
+    media: {
+      src: "/case-studies/upscale/cover.jpg",
+      alt: "ImagineArt Upscale workspace with a before and after compare",
+    },
+    coverStat: "850K+ upscales · 107K in the peak month",
+  },
+  {
+    slug: "power-zone",
+    name: "Power Zone",
+    paragraphs: [
+      "Power Zone supplies diesel generators and battery energy storage to industry across Pakistan. The site had to sell uptime to five very different buyers without becoming a parts catalog.",
+      "Designed in Figma and built in Framer end to end. An application-first site organized by industry, with every path resolving to one Contact Sales conversation.",
+    ],
+    rows: [
+      { label: "Year", value: "2024" },
+      { label: "Role", value: "Design, Framer build, brand & content" },
+      {
+        label: "Scope",
+        value: "Brand, Web Design, Framer Development, Content",
+      },
+      { label: "Device", value: "Web Design" },
+      {
+        label: "Tools",
+        value: "Figma, Framer",
       },
       { label: "Link", value: "powerzone.com.pk" },
     ],
     href: "https://powerzone.com.pk",
+    caseStudySlug: "power-zone",
     side: "left",
     media: {
-      src: "https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&w=1600&q=80",
-      alt: "Power Zone solar and wind energy farm",
+      src: "/case-studies/power-zone/hero.png",
+      alt: "Power Zone diesel generator hero",
     },
   },
   {

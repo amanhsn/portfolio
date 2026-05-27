@@ -4,12 +4,9 @@ import { AsteriskLogo } from "@/components/ui/asterisk-logo";
 /**
  * Case-study image.
  *
- * Real product shots already carry their own window chrome / rounded matte
- * (exported from Figma), so they render BARE - no extra border, background, or
- * shadow - at their natural aspect ratio, to match the Figma exactly.
- *
- * When `src` is missing, a branded framed placeholder renders instead, so the
- * layout reads cleanly while a screenshot is still pending.
+ * Real product shots render in the Figma product-shot frame (node 57:22227):
+ * rounded-16, a 1px border, a soft shadow, and object-cover. Tokens flip with
+ * the theme. When `src` is missing, a branded placeholder renders instead.
  */
 export function ImageFrame({
   src,
@@ -26,9 +23,13 @@ export function ImageFrame({
   priority?: boolean;
 }) {
   if (src) {
+    // Figma node 57:22227: rounded-16, 1px border-default, shadow-card, object-cover.
     return (
-      <div className="relative w-full overflow-hidden" style={{ aspectRatio: aspect }}>
-        <Image src={src} alt={alt} fill className="object-contain" sizes={sizes} priority={priority} />
+      <div
+        className="relative w-full overflow-hidden rounded-[var(--radius-lg)] border border-[var(--border-default)]"
+        style={{ aspectRatio: aspect, boxShadow: "var(--shadow-card)" }}
+      >
+        <Image src={src} alt={alt} fill className="object-cover" sizes={sizes} priority={priority} />
       </div>
     );
   }

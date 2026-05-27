@@ -31,7 +31,8 @@ export const filmStudio: CaseStudy = {
       { label: "AA Image Arena", value: "#6", caption: "80M+ designs shared" },
     ],
     productShot: {
-      src: "/case-studies/film-studio/hero.png",
+      src: "/case-studies/film-studio/hero.jpg",
+      aspect: "1678 / 1194",
       alt: "Film Studio workspace inside ImagineArt, the project-based AI film environment",
     },
   },
@@ -261,8 +262,8 @@ export const filmStudio: CaseStudy = {
     nav: {
       next: {
         label: "Next case study",
-        title: "ImagineArt References",
-        href: "/work/references",
+        title: "Power Zone",
+        href: "/work/power-zone",
       },
       all: { label: "All work", title: "Back to work", href: "/" },
     },

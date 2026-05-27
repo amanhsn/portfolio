@@ -133,11 +133,87 @@ function ControlAnatomy() {
   );
 }
 
+/** Power Zone decision 01 - five industries, each mapped to the solution it gets. */
+function ApplicationsIa() {
+  const rows: Array<[string, string]> = [
+    ["Utility companies", "Grid-scale diesel + BESS"],
+    ["Data centers", "Zero-failure backup power"],
+    ["Commercial buildings", "Right-sized generators"],
+    ["Government", "Compliant, serviced fleets"],
+    ["Residential developers", "Hybrid inverter + storage"],
+  ];
+  return (
+    <div className={`${card} p-5`}>
+      <span className="t-mono-xs text-fg-subtle">Application-first IA</span>
+      <div className="mt-3 flex flex-col gap-2">
+        {rows.map(([industry, solution]) => (
+          <div
+            key={industry}
+            className="flex flex-col gap-1 rounded-[var(--radius-sm)] border border-[var(--border)] px-3 py-2 sm:flex-row sm:items-center sm:justify-between"
+          >
+            <span className="text-[14px] font-medium text-fg">{industry}</span>
+            <span className="flex items-center gap-2 text-[13px] text-fg-muted">
+              <svg width="20" height="12" viewBox="0 0 20 12" fill="none" aria-hidden className="hidden shrink-0 sm:block">
+                <path d="M1 6h16m0 0-4-4m4 4-4 4" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+              {solution}
+            </span>
+          </div>
+        ))}
+      </div>
+      <p className="mt-3 text-[13px] text-fg-subtle">
+        The buyer&apos;s industry is the entry point. The product is the answer, not the menu.
+      </p>
+    </div>
+  );
+}
+
+/**
+ * Upscale monthly volume, real Mixpanel data (Creative Upscaler event,
+ * Imagine Web - Prod). Launch spike Nov 2024, peak Dec 2024, long taper.
+ */
+function UpscaleGrowth() {
+  const data: Array<[string, number]> = [
+    ["Nov", 55661], ["Dec", 107690], ["Jan", 106504], ["Feb", 83023],
+    ["Mar", 88550], ["Apr", 78199], ["May", 78206], ["Jun", 67137],
+    ["Jul", 63507], ["Aug", 51231], ["Sep", 30601], ["Oct", 14631],
+    ["Nov", 9624], ["Dec", 5308], ["Jan", 5315], ["Feb", 2002],
+    ["Mar", 1046], ["Apr", 424], ["May", 243],
+  ];
+  const max = 107690;
+  return (
+    <div className={`${card} p-5`}>
+      <div className="flex items-baseline justify-between">
+        <span className="t-mono-xs text-fg-subtle">Upscales per month</span>
+        <span className="t-mono-xs text-fg-subtle">launch to 2026</span>
+      </div>
+      <div className="mt-4 flex h-[160px] items-end gap-[3px]">
+        {data.map(([m, v], i) => (
+          <div key={i} className="group relative flex flex-1 flex-col items-center justify-end">
+            <div
+              className="w-full rounded-t-[2px] bg-[var(--accent)] transition-opacity"
+              style={{ height: `${Math.max((v / max) * 100, 1.5)}%` }}
+              title={`${v.toLocaleString()} upscales`}
+            />
+          </div>
+        ))}
+      </div>
+      <div className="mt-2 flex justify-between text-[11px] text-fg-subtle">
+        <span>Launch</span>
+        <span>107,690 peak</span>
+        <span>2026</span>
+      </div>
+    </div>
+  );
+}
+
 const REGISTRY: Record<string, () => React.ReactElement> = {
+  "upscale-growth": UpscaleGrowth,
   "prompt-vs-panel": PromptVsPanel,
   "output-types": OutputTypes,
   "model-agnostic": ModelAgnostic,
   "control-anatomy": ControlAnatomy,
+  "applications-ia": ApplicationsIa,
 };
 
 export function Diagram({ name }: { name?: string }) {

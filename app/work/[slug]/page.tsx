@@ -39,7 +39,11 @@ export default async function CaseStudyPage({ params }: Params) {
       <main className="relative w-full overflow-x-clip pb-24">
         {/* Rhythm: white → … → dark (craft) → white → tinted (learnings) → white */}
         <HeroBlock hero={cs.hero} />
-        <ProductShot src={cs.hero.productShot.src} alt={cs.hero.productShot.alt} />
+        <ProductShot
+          src={cs.hero.productShot.src}
+          alt={cs.hero.productShot.alt}
+          aspect={cs.hero.productShot.aspect}
+        />
 
         <FadeIn><ContextBlock context={cs.context} /></FadeIn>
         <FadeIn><ProblemBlock problem={cs.problem} /></FadeIn>

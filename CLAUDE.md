@@ -14,3 +14,6 @@
 
 ## Design
 - Match Figma fonts, sizes, and spacing verbatim. No substitutes.
+- **Never use JetBrains Mono.** Do not inject new fonts. Use only the fonts already in the
+  system (Satoshi, Inter, Geist, Geist Mono, DM Mono). Where a mono/eyebrow style is needed,
+  use **Inter** (or DM Mono where the design already uses it), never JetBrains.

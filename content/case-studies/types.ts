@@ -20,7 +20,7 @@ export type Stat = {
 export type MetaItem = { label: string; value: string };
 
 /** `src` omitted → a branded placeholder frame renders until the asset lands. */
-export type HeroImage = { src?: string; alt: string };
+export type HeroImage = { src?: string; alt: string; aspect?: string };
 
 export type Hero = {
   /** ALL-CAPS title (rendered uppercase). */
@@ -97,6 +97,8 @@ export type Outcome =
       /** Always date your data, e.g. "Mixpanel · Film Studio · Oct 2025". */
       dateStamp: string;
       metrics: Stat[];
+      /** Optional diagram key rendered below the metric cards (e.g. a growth chart). */
+      chart?: string;
       closing: string;
     }
   | {

@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "motion/react";
 import { ProjectMeta } from "./project-meta";
+import { AsteriskLogo } from "@/components/ui/asterisk-logo";
 import type { Project } from "@/content/projects";
 
 /**
@@ -21,14 +22,28 @@ export function ProjectShowcase({ project }: { project: Project }) {
         style={{ boxShadow: "var(--shadow-card)" }}
         data-cursor-text={project.name}
       >
-        <Image
-          src={project.media.src}
-          alt={project.media.alt}
-          fill
-          className="object-cover"
-          sizes="(max-width: 768px) 100vw, 839px"
-          priority
-        />
+        {project.media.src ? (
+          <Image
+            src={project.media.src}
+            alt={project.media.alt}
+            fill
+            className="object-cover"
+            sizes="(max-width: 768px) 100vw, 839px"
+            priority
+          />
+        ) : (
+          <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 bg-[#0c0d10] px-8 text-center text-white">
+            <AsteriskLogo size={40} className="opacity-70" />
+            <span className="font-[family-name:var(--font-sans)] text-[30px] font-bold tracking-[-0.4px]">
+              {project.name}
+            </span>
+            {project.coverStat && (
+              <span className="font-[family-name:var(--font-dm-mono)] text-[13px] uppercase tracking-[0.2em] text-white/55">
+                {project.coverStat}
+              </span>
+            )}
+          </div>
+        )}
       </div>
     </div>
   );

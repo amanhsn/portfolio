@@ -22,7 +22,7 @@ export function CraftBand({ craft }: { craft: Craft }) {
         </p>
 
         {craft.image ? (
-          <div className="mt-12 overflow-hidden rounded-[var(--radius-lg)] border border-white/10">
+          <div className="mt-12">
             <ImageFrame
               src={craft.image}
               alt={craft.headline}

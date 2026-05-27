@@ -282,9 +282,9 @@ html[data-cursor-active="true"]
   color: var(--text-primary);
 }
 
-/* Footer link — JetBrains Mono Medium 14/14 uppercase */
+/* Footer link — Inter Medium 14/14 uppercase */
 .t-footer-link {
-  font-family: var(--font-jetbrains);
+  font-family: var(--font-inter);
   font-weight: 500;
   font-size: 14px;
   line-height: 14px;
@@ -358,7 +358,7 @@ html[data-cursor-active="true"]
   line-height: 20.25px;
 }
 .t-eyebrow {
-  font-family: var(--font-jetbrains);
+  font-family: var(--font-inter);
   font-weight: 500;
   font-size: 14px;
   line-height: 14px;
@@ -366,7 +366,7 @@ html[data-cursor-active="true"]
   text-transform: uppercase;
 }
 .t-link {
-  font-family: var(--font-jetbrains);
+  font-family: var(--font-inter);
   font-weight: 500;
   font-size: 14px;
   line-height: 14px;
