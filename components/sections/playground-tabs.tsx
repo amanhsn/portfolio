@@ -31,7 +31,7 @@ export function PlaygroundTabs() {
             type="button"
             onClick={() => setActive(t.id)}
             className={cn(
-              "relative rounded-[var(--radius-pill)] px-4 py-1.5 font-[family-name:var(--font-inter)] text-[14px] transition-colors",
+              "relative rounded-[var(--radius-pill)] px-4 py-1.5 font-[family-name:var(--font-sans)] text-[14px] transition-colors",
               active === t.id ? "text-fg" : "text-fg-subtle hover:text-fg",
             )}
           >
