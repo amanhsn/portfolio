@@ -353,14 +353,14 @@ export function PlaygroundCanvas() {
           maxLength={40}
           onChange={(e) => setName(e.target.value)}
           placeholder="Your name"
-          className="h-11 flex-1 rounded-[var(--radius-md)] border border-[var(--border-default)] bg-[var(--bg-elevated)] px-4 font-[family-name:var(--font-inter)] text-[15px] text-fg placeholder:text-fg-subtle focus:border-[var(--text-primary)] focus:outline-none"
+          className="h-10 w-full rounded-[var(--radius-md)] border border-[var(--border-default)] bg-[var(--bg-elevated)] px-4 font-[family-name:var(--font-inter)] text-[15px] text-fg placeholder:text-fg-subtle focus:border-[var(--text-primary)] focus:outline-none sm:w-auto sm:flex-1"
         />
         <button
           type="button"
           onClick={submit}
           disabled={submitting}
           data-cursor-text="Submit"
-          className="h-11 rounded-[var(--radius-md)] bg-[var(--text-primary)] px-6 font-[family-name:var(--font-sans)] text-[15px] font-medium text-[var(--bg)] transition-opacity hover:opacity-90 disabled:opacity-50"
+          className="h-10 rounded-[var(--radius-md)] bg-[var(--text-primary)] px-6 font-[family-name:var(--font-sans)] text-[15px] font-medium text-[var(--bg)] transition-opacity hover:opacity-90 disabled:opacity-50"
         >
           {submitting ? "Submitting..." : "Submit doodle"}
         </button>
