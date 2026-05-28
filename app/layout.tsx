@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Geist, Geist_Mono, DM_Mono } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import { Providers } from "./providers";
 import { CursorFollow } from "@/components/ui/cursor-follow";
 import { Loader } from "@/components/site/loader";
@@ -77,6 +78,7 @@ export default function RootLayout({
           <CursorFollow />
           <Loader />
         </Providers>
+        <Analytics />
       </body>
     </html>
   );
