@@ -1,7 +1,7 @@
 import { Navbar } from "@/components/site/navbar";
 import { Footer } from "@/components/site/footer";
 import { AsteriskDecoration } from "@/components/site/asterisk-decoration";
-import { PlaygroundBento } from "@/components/sections/playground-bento";
+import { PlaygroundTabs } from "@/components/sections/playground-tabs";
 
 export const metadata = {
   title: "Playground · Aman's Portfolio",
@@ -20,7 +20,7 @@ export default function PlaygroundPage() {
           <AsteriskDecoration position="bottom-left" />
         </div>
 
-        <section className="flex w-full flex-col items-center gap-[40px] px-5 sm:px-8 lg:px-[80px]">
+        <section className="flex w-full flex-col items-center gap-[64px] px-5 sm:px-8 md:gap-[88px] lg:px-[80px]">
           <div className="flex w-full max-w-[1280px] flex-col items-start gap-[16px] sm:p-[12px]">
             {/* Heading - SIDE PROJECTS, IDEAS & VIBECODED 'SLOP' */}
             <h1 className="t-hero-name text-[17px] tracking-[2.2px] sm:text-[20px] sm:tracking-[2.8px]">
@@ -62,9 +62,9 @@ export default function PlaygroundPage() {
             </p>
           </div>
 
-          {/* Bento grid - vibecoded side projects */}
+          {/* Tabs: Projects (bento) + Leave a mark (canvas) */}
           <div className="w-full max-w-[1280px] sm:px-[12px]">
-            <PlaygroundBento />
+            <PlaygroundTabs />
           </div>
         </section>
       </main>

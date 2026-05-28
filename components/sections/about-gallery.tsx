@@ -47,25 +47,52 @@ export function AboutGallery() {
         </p>
       </div>
 
-      <ContainerScroll className="relative h-[300vh] w-full">
+      {/* Mobile: a clean, even 2-column grid (the 3D parallax masonry below is
+          desktop-only - 5 columns don't divide evenly on a phone, which left an
+          orphan card and a big void). */}
+      <div className="grid w-full grid-cols-2 gap-2 md:hidden">
+        {galleryImages.map((img) => (
+          <button
+            key={img.src}
+            type="button"
+            onClick={() => onCardClick(img)}
+            data-cursor-text={img.title}
+            aria-label={`Open ${img.title}`}
+            className="group relative aspect-[4/5] w-full overflow-hidden rounded-[10px] bg-[var(--bg-muted)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--text-primary)]"
+          >
+            <Image
+              src={img.src}
+              alt={img.alt}
+              fill
+              sizes="50vw"
+              className="object-cover"
+            />
+            <span className="pointer-events-none absolute inset-x-1.5 bottom-1.5 rounded bg-black/60 px-2 py-1 text-[10px] text-white">
+              {img.title}
+            </span>
+          </button>
+        ))}
+      </div>
+
+      <ContainerScroll className="relative hidden h-[300vh] w-full md:block">
         <ContainerSticky className="flex h-svh w-full items-center justify-center px-4 sm:px-8 lg:px-[80px]">
           <GalleryContainer className="mx-auto h-[min(78vh,720px)] w-full max-w-[1200px] gap-2 sm:gap-3">
             {/* Col 1 - slight downward parallax */}
-            <GalleryCol yRange={["-6%", "0%"]} className="-mt-1">
+            <GalleryCol yRange={["-6%", "0%"]} className="md:-mt-1">
               {cols[0].map((img) => (
                 <GalleryCard key={img.src} img={img} onClick={onCardClick} />
               ))}
             </GalleryCol>
 
             {/* Col 2 - counter parallax, slight upward offset start */}
-            <GalleryCol yRange={["8%", "1%"]} className="mt-[-8%]">
+            <GalleryCol yRange={["8%", "1%"]} className="md:mt-[-8%]">
               {cols[1].map((img) => (
                 <GalleryCard key={img.src} img={img} onClick={onCardClick} />
               ))}
             </GalleryCol>
 
             {/* Col 3 - center, mild parallax */}
-            <GalleryCol yRange={["-4%", "0%"]} className="-mt-1">
+            <GalleryCol yRange={["-4%", "0%"]} className="md:-mt-1">
               {cols[2].map((img) => (
                 <GalleryCard key={img.src} img={img} onClick={onCardClick} />
               ))}
@@ -74,7 +101,7 @@ export function AboutGallery() {
             {/* Col 4 - counter parallax (mirrors col 2) */}
             <GalleryCol
               yRange={["8%", "1%"]}
-              className="mt-[-8%]"
+              className="md:mt-[-8%]"
             >
               {cols[3].map((img) => (
                 <GalleryCard key={img.src} img={img} onClick={onCardClick} />
@@ -84,7 +111,7 @@ export function AboutGallery() {
             {/* Col 5 - mirrors col 1 */}
             <GalleryCol
               yRange={["-6%", "0%"]}
-              className="-mt-1"
+              className="md:-mt-1"
             >
               {cols[4].map((img) => (
                 <GalleryCard key={img.src} img={img} onClick={onCardClick} />

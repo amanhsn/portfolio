@@ -172,6 +172,44 @@ html[data-cursor-active="true"]
   :where(input, textarea, select, [contenteditable="true"]) {
   cursor: text !important;
 }
+/* Drawing surfaces keep a native crosshair instead of the hidden custom cursor */
+html[data-cursor-active="true"] [data-cursor-native],
+html[data-cursor-active="true"] [data-cursor-native] * {
+  cursor: crosshair !important;
+}
+
+/* Brush-size range slider (playground canvas) */
+.pg-range {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 4px;
+  border-radius: 999px;
+  background: var(--border-strong);
+  outline: none;
+  cursor: pointer;
+}
+.pg-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  border-radius: 999px;
+  background: var(--text-primary);
+  border: 2px solid var(--bg-elevated);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+  transition: transform 0.12s ease;
+}
+.pg-range::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+}
+.pg-range::-moz-range-thumb {
+  width: 15px;
+  height: 15px;
+  border-radius: 999px;
+  background: var(--text-primary);
+  border: 2px solid var(--bg-elevated);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+}
 @media (pointer: coarse), (prefers-reduced-motion: reduce) {
   html[data-cursor-active="true"] *,
   html[data-cursor-active="true"] *::before,
