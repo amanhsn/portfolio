@@ -360,6 +360,7 @@ export function PlaygroundCanvas() {
           onClick={submit}
           disabled={submitting}
           data-cursor-text="Submit"
+          data-cursor-skip
           className="h-10 rounded-[var(--radius-md)] bg-[var(--text-primary)] px-6 font-[family-name:var(--font-sans)] text-[15px] font-medium text-[var(--bg)] transition-opacity hover:opacity-90 disabled:opacity-50"
         >
           {submitting ? "Submitting..." : "Submit doodle"}

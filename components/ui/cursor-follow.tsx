@@ -20,6 +20,13 @@ import { ArrowUpRight } from "lucide-react";
  *   - data-cursor-videos="/a,/b,/c"   plays a RANDOM video from the list, re-rolled
  *                                     each time the cursor enters the element
  *
+ * Anchors (<a>) and any element with `data-cursor-skip` bypass the morph
+ * (label / image / video) so the click target stays stable. They still get
+ * the pointer/idle dot. Mark primary CTA buttons with `data-cursor-skip`.
+ *
+ * Use `data-cursor-keep` on an ancestor to opt a link back into the morph
+ * (for image / card-shaped links where the hover label is the affordance).
+ *
  * Hidden on coarse pointer / reduced motion. Theme-aware via --cursor-bg/fg.
  */
 
@@ -101,9 +108,19 @@ export function CursorFollow() {
       const target = e.target as HTMLElement | null;
       if (!target) return;
 
-      const labelEl = target.closest<HTMLElement>(
+      const labelMatch = target.closest<HTMLElement>(
         "[data-cursor-text], [data-cursor-image], [data-cursor-videos]",
       );
+      // Anything that is (or sits inside) an anchor or a [data-cursor-skip]
+      // bypasses the morph so the click target stays stable. An ancestor with
+      // [data-cursor-keep] opts a link back in (for image / card-shaped links
+      // where the label is content affordance, not friction).
+      const labelEl =
+        labelMatch &&
+        (labelMatch.closest("[data-cursor-keep]") ||
+          !labelMatch.closest("a, [data-cursor-skip]"))
+          ? labelMatch
+          : null;
       if (labelEl) {
         const videosAttr = labelEl.getAttribute("data-cursor-videos");
         if (videosAttr) {

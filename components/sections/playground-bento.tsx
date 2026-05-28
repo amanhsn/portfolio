@@ -54,6 +54,7 @@ function BentoCard({ item }: { item: BentoItem }) {
           rel="noopener noreferrer"
           aria-label={`Open ${title}`}
           data-cursor-text="Open"
+          data-cursor-keep
           className="absolute inset-0 z-20"
         />
       )}

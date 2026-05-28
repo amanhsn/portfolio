@@ -66,6 +66,7 @@ export function ProjectShowcase({ project }: { project: Project }) {
           <Link
             href={`/work/${project.caseStudySlug}`}
             data-cursor-text="View case study"
+            data-cursor-keep
             className="block w-full md:w-auto"
           >
             {media}
@@ -76,6 +77,7 @@ export function ProjectShowcase({ project }: { project: Project }) {
             target="_blank"
             rel="noopener noreferrer"
             data-cursor-text="Open project"
+            data-cursor-keep
             className="block w-full md:w-auto"
           >
             {media}
