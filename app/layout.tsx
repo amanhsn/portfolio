@@ -3,6 +3,8 @@ import { Inter, Geist, Geist_Mono, DM_Mono } from "next/font/google";
 import { Providers } from "./providers";
 import { CursorFollow } from "@/components/ui/cursor-follow";
 import { Loader } from "@/components/site/loader";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 
 // Satoshi → Fontshare CDN (linked in <head>).
@@ -77,6 +79,8 @@ export default function RootLayout({
           <CursorFollow />
           <Loader />
         </Providers>
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
